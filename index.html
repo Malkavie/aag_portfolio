@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title id="pageTitle"></title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="portfolio">
+
+  <!-- MENU -->
+  <nav>
+    <div class="subNav" data-lang="en">
+      <a href="demo/index.html">Demo</a>
+      <a href="cv.html">Resume</a>
+      <a href="index.html">Main</a>
+    </div> 
+
+    <div class="subNav" data-lang="es">
+      <a href="demo/index.html">Demo</a>
+      <a href="cv.html">CV</a>
+      <a href="index.html">Principal</a>
+    </div>
+
+    <button class="lang" id="langToggle">
+      <img src="images/mx_flag.png" alt="The Mexican Flag, icons by amoghdesign. Flaticon" title="US-Flag" data-lang="en">
+
+      <img src="images/us_flag.png" alt="The American Flag, icons by amoghdesign. Flaticon" title="MX-Flag" data-lang="es">
+
+      <span id="langTag">ES</span>      
+    </button>
+  </nav>
+
+  <!-- HEADER -->
+  <header data-lang="en">
+    <h1>Adrian Aguado Galindo</h1>
+    <h2>Front-End Developer | Data Visualization | AI Workflow Developer</h2>
+    <p class="tagline">
+      Building real-time, interactive web solutions and AI-powered workflows     
+    </p>
+  </header>
+
+  <header data-lang="es">
+    <h1>Adrián Aguado Galindo</h1>
+    <h2>Desarrollador Front-End | Visualización de datos | Desarrollador de flujos de trabajo para IA</h2>
+    <p class="tagline">
+      Construyendo soluciones web interactivas en tiempo real y flujos de trabajo potenciados por IA      
+    </p>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <!-- ABOUT -->
+    <section data-lang="en">
+      <h2>About:</h2>
+      <p>
+        Front-End developer with 10+ years of experience building interactive web solutions, including real-time dashboards and data visualization systems for enterprise and industrial environments.
+      </p>
+      <p>
+        Recently focused on AI workflows and generative tools using ComfyUI and Python.
+      </p>
+    </section>
+
+    <section data-lang="es">
+      <h2>Resumen:</h2>
+      <p>
+        Desarrollador Front-End con más de una década de experiencia creando soluciones web interactivas, incluyendo dashboards en tiempo real y sistemas de visualización de datos para entornos empresariales e industriales.
+      </p>
+      <p>
+        Recientemente enfocado en flujos de trabajo de IA y herramientas generativas como ComfyUI y Python.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- PROJECT 
+    <section data-lang="en">
+      <h2>Featured Project:</h2>
+      <div class="card">
+        <h3>Industrial Monitoring Dashboard</h3>
+        <p>
+          Interactive, real-time demo with simulated production data, dynamic updates, and SVG-based visualizations.
+        </p>
+        <a href="./dashboard/index.html" target="_self">View Demo</a>
+      </div>
+    </section>
+    <section data-lang="es">
+      <h2>Proyecto muestra:</h2>
+      <div class="card">
+        <h3>Dashboard de Monitoreo Industrial</h3>
+        <p>
+          Demo interactivo en tiempo real con datos simulados de producción, actualizaciones dinámicas de la interfaz y visualizaciones basadas en SVG.
+        </p>
+        <a href="./dashboard/index.html" target="_self">Abrir Demo</a>
+      </div>
+    </section>
+    <hr> -->
+
+    <!-- SKILLS -->
+    <section data-lang="en">
+      <h2>Skills:</h2>
+      <ul>
+        <li>JavaScript, HTML5, CSS3</li>
+        <li>AngularJS, jQuery</li>
+        <li>SVG &amp; Data Visualization</li>
+        <li>PHP &amp; SQL</li>
+        <li>ComfyUI &amp; AI Workflows</li>
+      </ul>
+    </section>
+
+    <section data-lang="es">
+      <h2>Habilidades:</h2>
+      <ul>
+        <li>JavaScript, HTML5, CSS3</li>
+        <li>AngularJS, jQuery</li>
+        <li>SVG &amp; Visualización de datos</li>
+        <li>PHP &amp; SQL</li>
+        <li>ComfyUI &amp; Flujos de Trabajo para IA</li>
+      </ul>
+    </section>
+    <hr>
+
+    <!-- EXPERIENCE -->
+    <section data-lang="en">
+      <h2>Experience:</h2>
+
+      <div>
+        <h3>KIMA Solutions</h3>
+        <p>
+          Developed interactive, real-time industrial monitoring dashboards using AngularJS and SVG for operational efficiency.
+        </p>
+      </div>
+
+      <div>
+        <h3>Diestra Business Coaching</h3>
+        <p>
+          Built internal tools and control panels to streamline business operations and enhance workflow.
+        </p>
+      </div>
+    </section>
+
+    <section data-lang="es">
+      <h2>Experiencia:</h2>
+
+      <div>
+        <h3>KIMA Solutions</h3>
+        <p>
+          Desarrollo de dashboards interactivos de monitoreo industrial en tiempo real usando AngularJS y SVG para mejorar la eficiencia operativa.
+        </p>
+      </div>
+
+      <div>
+        <h3>Diestra Business Coaching</h3>
+        <p>
+          Creación de herramientas internas y paneles de control para optimizar las operaciones del negocio y mejorar los flujos de trabajo.
+        </p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- CV -->
+    <section data-lang="en">
+      <h2>Resume</h2>
+
+      <span>Detailed professional experience:</span>
+      <a href="cv.html" target="_self">Open Resume</a>
+    </section>
+
+    <section data-lang="es">
+      <h2>CV</h2>
+
+      <span>Experiencia profesional completa:</span>
+      <a href="cv.html" target="_self">Abrir CV</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer data-lang="en">
+    <p>&copy; Adrian Aguado. All right reserved</p>
+    <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
+    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
+  </footer>
+
+  <footer data-lang="es">
+    <p>&copy; Adrián Aguado. Todos los derechos reservados</p>
+    <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
+    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
+  </footer>
+
+  <script src="js/lang.js"></script>
+</body>
+</html>
