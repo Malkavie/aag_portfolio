@@ -2,7 +2,6 @@ const button = document.getElementById("langToggle")
 const page = document.body.getAttribute("data-page")
 let setLang = localStorage.getItem("lang")
 let currentLang
-let titles
 
 if (setLang === "en" || setLang === "es") {
   // Set Language
@@ -17,8 +16,6 @@ if (setLang === "en" || setLang === "es") {
   // Save Language
   localStorage.setItem("lang", currentLang)
 }
-
-applyLanguage(currentLang);
 
 // Confirm that the language button is present
 if (button) {
@@ -51,17 +48,34 @@ function applyLanguage(lang) {
   // Select the title according to language and page || set initial value
   const pageName = titles[lang][page] || "Portfolio"
   const langTag = document.getElementById("langTag")
+  const langStatus = document.getElementById("langStatus")
+  const links = document.getElementsByClassName("skip-link")
+
   langTag.textContent = lang === "en" ? "ES" : "EN"
   // Apply page title
   document.title = `AAG | ${pageName}`
   // Update <html lang="">
-  document.documentElement.setAttribute("lang", lang)
+  document.documentElement.lang = lang
+  // Update LAngStatus for readers
+  langStatus.textContent = currentLang === "en" 
+    ? "Language changed to English" 
+    : "Idioma cambiado a español";
+  button.setAttribute("aria-pressed", lang === "es")
   // Show/Hide elements according to selected language
   document.querySelectorAll("[data-lang]").forEach(el => {
     if (el.getAttribute("data-lang") === currentLang) {
       el.classList.remove("hidden")
+      el.setAttribute("aria-hidden", "false")
+      button.setAttribute("aria-label",
+        lang === "en"
+        ? "Switch to Spanish"
+        : "Cambiar a inglés"
+      )
     } else {
       el.classList.add("hidden")
+      el.setAttribute("aria-hidden", "true")  
     }
   })
 }
+
+applyLanguage(currentLang);

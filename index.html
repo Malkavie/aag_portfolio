@@ -2,203 +2,408 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title id="pageTitle"></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adrian Aguado Galindo">
+  <meta name="description" content="Front-End Developer specialized in real-time dashboards, data visualization, and AI workflows.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css">
+  <title>AAG | Portfolio</title>
 </head>
 <body data-page="portfolio">
+  <!-- SKIP LINK (accesibilidad) -->
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="en">Skip to content</a>
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="es">Ir al contenido</a>
+  <div id="langStatus" class="hidden" aria-live="polite"></div>
+  <button class="lang" id="langToggle" aria-label="Change language" aria-pressed="false">
+    <img src="images/mx_flag.png" alt="" data-lang="en" aria-hidden="true">
+    <img src="images/us_flag.png" alt="" data-lang="es" aria-hidden="true">
+    <span id="langTag">ES</span>      
+  </button>
 
   <!-- MENU -->
-  <nav>
-    <div class="subNav" data-lang="en">
-      <a href="demo/index.html">Demo</a>
-      <a href="cv.html">Resume</a>
-      <a href="index.html">Main</a>
-    </div> 
+  <nav id="mainmenu">
+    <span class="invisible" data-lang="en">Main navigation</span>
+    <span class="invisible" data-lang="es">Navegación principal</span>
+    
+    <ul class="subNav" data-lang="en">
+      <li><a href="index.html" aria-current="page">Main</a></li>
+      <li><a href="cv.html">Resume</a></li>
+      <li><a href="demo/index.html">Demo</a></li>
+    </ul>
 
-    <div class="subNav" data-lang="es">
-      <a href="demo/index.html">Demo</a>
-      <a href="cv.html">CV</a>
-      <a href="index.html">Principal</a>
-    </div>
-
-    <button class="lang" id="langToggle">
-      <img src="images/mx_flag.png" alt="The Mexican Flag, icons by amoghdesign. Flaticon" title="US-Flag" data-lang="en">
-
-      <img src="images/us_flag.png" alt="The American Flag, icons by amoghdesign. Flaticon" title="MX-Flag" data-lang="es">
-
-      <span id="langTag">ES</span>      
-    </button>
+    <ul class="subNav" data-lang="es">
+      <li><a href="index.html" aria-current="page">Principal</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="demo/index.html">Demo</a></li>
+    </ul>
   </nav>
 
   <!-- HEADER -->
-  <header data-lang="en">
-    <h1>Adrian Aguado Galindo</h1>
-    <h2>Front-End Developer | Data Visualization | AI Workflow Developer</h2>
-    <p class="tagline">
-      Building real-time monitoring systems for data, and AI workflows
-    </p>
-    <br>
-    <a href="assets/resume_aag_26.pdf" class="btn-download" download>
-      Download Resume
-    </a>
-  </header>
+  <header id="herobanner" role="banner">
 
-  <header data-lang="es">
-    <h1>Adrián Aguado Galindo</h1>
-    <h2>Desarrollador Front-End | Visualización de datos | Desarrollador de flujos de trabajo para IA</h2>
-    <p class="tagline">
-      Construyendo sistemas de monitoreo en tiempo real para datos, y flujps de trabajo para IA
-    </p>
-    <br>
-    <a href="assets/cv_aag_26.pdf" class="btn-download" download>
-      Descargar CV
-    </a>
+    <div data-lang="en">
+      <h1>Adrian Aguado Galindo</h1>
+      <h2>Front-End Developer | Data Visualization | AI Workflow Developer</h2>
+      <p role="text">
+        Building real-time monitoring systems for data, and AI workflows
+      </p>
+      <a href="assets/resume_aag_26.pdf" class="download" download aria-label="Download resume as PDF">
+        Download Resume
+      </a>
+    </div>
+    
+    <div data-lang="es">
+      <h1>Adrián Aguado Galindo</h1>
+      <h2>Desarrollador Front-End | Visualización de datos | Desarrollador de flujos de trabajo para IA</h2>
+      <p role="text">
+        Construyendo sistemas de monitoreo en tiempo real para datos, y flujos de trabajo para IA
+      </p>
+      <a href="assets/cv_aag_26.pdf" class="download" download aria-label="Descargar CV en PDF">
+        Descargar CV
+      </a>
+    </div>
+
   </header>
 
   <!-- CONTENT -->
-  <main>
+  <main id="maincontent" role="main">
     <!-- ABOUT -->
-    <section data-lang="en">
-      <h2>About:</h2>
-      <p>
-        Front-End developer with 10+ years of experience building interactive web solutions, including real-time dashboards and data visualization systems for enterprise and industrial environments.
-      </p>
-      <p>
-        Recently focused on AI workflows and generative tools using ComfyUI and Python.
-      </p>
-      <p>
-        I enjoy building systems that make complex data easy to understand.
-      </p>
-    </section>
+    <section id="about" aria-labelledby="about-title">
 
-    <section data-lang="es">
-      <h2>Resumen:</h2>
-      <p>
-        Desarrollador Front-End con más de una década de experiencia creando soluciones web interactivas, incluyendo dashboards en tiempo real y sistemas de visualización de datos para entornos empresariales e industriales.
-      </p>
-      <p>
-        Recientemente enfocado en flujos de trabajo de IA y herramientas generativas como ComfyUI y Python.
-      </p>
-      <p>
-        Me interesa construir sistemas que hagan los datos complejos fáciles de entender.
-      </p>
+      <div data-lang="en">
+        <h2 id="about-title">About</h2>
+        <p>
+          Front-End Developer with 10+ years of experience building interactive web solutions, focused on real-time dashboards and data visualization systems.
+        </p>
+        <p>
+          I specialize in creating interfaces that transform complex data into clear, actionable insights, particularly in industrial and operational environments.
+        </p>
+        <p>
+          Recently, I have expanded my work into AI-powered workflows and generative tools, combining data, automation, app development, and user interfaces into cohesive systems.
+        </p>
+        <p class="tagline">
+          Focused on building reliable, scalable, and user-centered interfaces.
+        </p>
+      </div>
+
+      <div data-lang="es">
+        <h2 id="about-title">Resumen</h2>
+        <p>
+          Desarrollador Front-End con más de 10 años de experiencia creando soluciones web interactivas, enfocado en dashboards en tiempo real y sistemas de visualización de datos.
+        </p>
+        <p>
+          Me especializo en construir interfaces que transforman datos complejos en información clara y accionable, especialmente en entornos industriales y operativos.
+        </p>
+        <p>
+          Recientemente he ampliado mi trabajo con flujos de trabajo potenciados por IA y herramientas generativas, combinando datos, automatización e interfaces en sistemas integrados.
+        </p>
+        <p class="tagline">
+          Enfocado en crear interfaces confiables, escalables y centradas en el usuario.
+        </p>
+      </div>
+
     </section>
 
     <hr>
 
-    <!-- PROJECT 
-    <section data-lang="en">
-      <h2>Featured Project:</h2>
-      <div class="card">
-        <h3>Industrial Monitoring Dashboard</h3>
-        <p>
-          Interactive, real-time demo with simulated production data, dynamic updates, and SVG-based visualizations.
-        </p>
-        <a href="./dashboard/index.html" target="_self">View Demo</a>
+    <!-- PROJECTS -->
+    <section id="featured" aria-labelledby="projects-title">
+
+      <div data-lang="en">
+
+        <h2 id="projects-title">Projects</h2>
+        
+        <div class="projects-grid">
+
+          <article class="projects-card" aria-labelledby="project-1-title">
+            <img src="images/project1.png" alt="Industrial dashboard preview">
+
+            <div class="project-content">
+              <h3 id="project-1-title">Industrial Monitoring Dashboard</h3>
+              <p>
+                Real-time production simulation with dynamic UI updates and SVG-based visualization.
+              </p>
+              <a href="./demo/index.html" aria-label="View industrial monitoring dashboard demo">View Demo</a>
+            </div>
+          </article>
+
+        </div>
+
       </div>
+
+      <div data-lang="es">
+        
+        <h2 id="projects-title">Proyectos</h2>
+
+        <div class="projects-grid">
+        
+          <article class="projects-card" aria-labelledby="project-1-title">
+            <img src="images/project1.png" alt="Industrial dashboard preview">
+
+            <div class="project-content">
+              <h3 id="project-1-title">Dashboard de Monitoreo Industrial</h3>
+              <p>
+                Simulación de una línea de producción en tiempo real con actualización dinámica de UI y visualización con gráficos SVG
+              </p>
+              <a href="./demo/index.html" aria-label="Ver el demo del sistema de monitoreo industrial">Ver Demo</a>
+            </div>
+          </article>
+
+        </div>
+
     </section>
-    <section data-lang="es">
-      <h2>Proyecto muestra:</h2>
-      <div class="card">
-        <h3>Dashboard de Monitoreo Industrial</h3>
-        <p>
-          Demo interactivo en tiempo real con datos simulados de producción, actualizaciones dinámicas de la interfaz y visualizaciones basadas en SVG.
-        </p>
-        <a href="./dashboard/index.html" target="_self">Abrir Demo</a>
-      </div>
-    </section>
-    <hr> -->
+    
+    <hr>
 
     <!-- SKILLS -->
-    <section data-lang="en">
-      <h2>Skills:</h2>
-      <ul>
-        <li>JavaScript, HTML5, CSS3</li>
-        <li>AngularJS, jQuery</li>
-        <li>SVG &amp; Data Visualization</li>
-        <li>PHP &amp; SQL</li>
-        <li>ComfyUI &amp; AI Workflows</li>
-      </ul>
+    <section id="skills" aria-labelledby="skills-title">
+
+      <div data-lang="en">
+
+        <h2 id="skills-title">Skills</h2>
+
+        <div class="grid-container">
+          
+          <article>
+            <h3>Front-End</h3>
+            <ul>
+              <li>JavaScript</li>
+              <li>HTML5 &amp; CSS3</li>
+              <li>Responsive Design</li>
+              <li>Semantics &amp; Accesibility</li>
+              <li>SVG &amp; Data Visualization</li>
+              <li>AngularJS, jQuery</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Back-End</h3>
+            <ul>
+              <li>PHP</li>
+              <li>SQL / MySQL</li>
+              <li>JSON Data Handling</li>
+              <li>API integration</li>
+              <li>CRUD operations</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Webmaster</h3>
+            <ul>
+              <li>Hosting &amp; Domains</li>
+              <li>Server configuration</li>
+              <li>SEO Fundamental</li>
+              <li>DNS Configuration</li>
+              <li>Data Analytics</li>
+              <li>SSL Management</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>AI Developer</h3>
+            <ul>
+              <li>AI-powered workflows</li>
+              <li>Image generation pipelines</li>
+              <li>LoRA training &amp; tuning</li>
+              <li>Prompt Engineering</li>
+              <li>App Development</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+
+      <div data-lang="es">
+
+        <h2 id="skills-title">Habilidades:</h2>
+        
+        <div class="grid-container">
+          
+          <article>
+            <h3>Front-End</h3>
+            <ul>
+              <li>JavaScript</li>
+              <li>HTML5 &amp; CSS3</li>
+              <li>Diseño Responsivo</li>
+              <li>Semántica &amp; Accesibilidad</li>
+              <li>SVG &amp; Visualización de Datos</li>
+              <li>AngularJS, jQuery</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Back-End</h3>
+            <ul>
+              <li>PHP</li>
+              <li>SQL / MySQL</li>
+              <li>Manejo de Datos en JSON</li>
+              <li>Integración con API</li>
+              <li>Operaciones CRUD</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Webmaster</h3>
+            <ul>
+              <li>Hospedaje &amp; Dominios</li>
+              <li>Configuración de Servidores</li>
+              <li>Fundamentos de SEO</li>
+              <li>Configuración de DNS</li>
+              <li>Data Analytic</li>
+              <li>Administración de SSL</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Desarrollo IA</h3>
+            <ul>
+              <li>Flujos de trabajo potenciados por IA</li>
+              <li>Pipelines para generación de imágenes</li>
+              <li>Entrenamiento &amp; Refinamiento de LoRA</li>
+              <li>Ingeniería de Prompt</li>
+              <li>Desarrollo de Apps</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+
     </section>
 
-    <section data-lang="es">
-      <h2>Habilidades:</h2>
-      <ul>
-        <li>JavaScript, HTML5, CSS3</li>
-        <li>AngularJS, jQuery</li>
-        <li>SVG &amp; Visualización de datos</li>
-        <li>PHP &amp; SQL</li>
-        <li>ComfyUI &amp; Flujos de Trabajo para IA</li>
-      </ul>
+    <hr>
+
+    <!-- FEATURES -->
+    <section id="thissite" aria-labelledby="thissite-title">
+
+      <div data-lang="en">
+
+        <h2 id="thissite-title">This Site Features:</h2>
+        
+        <article class="margin-down">
+          <h3>Bilingual System</h3>
+          <p>Dynamic language switching without page reload using only structured DOM control.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Accessibility</h3>
+          <p>Semantic HTML with screen reader support and ARIA enhancements where needed. Features inclusive and keyboard-friendly navigation.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Performance &amp; Architecture</h3>
+          <p>Built with vanilla JavaScript, focusing on lightweight, modular structure, and scalable design.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first layout using Flexbox and Grid for adaptive interfaces and UI components.</p>
+        </article>
+
+      </div>
+
+      <div data-lang="es">
+
+        <h2 id="thissite-title">Características del sitio:</h2>
+
+        <article class="margin-down">
+          <h3>Sistema Bilingüe</h3>
+          <p>Cambio dinámico de idioma sin recargar la página, utilizando únicamente control estructurado del DOM.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Accesibilidad</h3>
+          <p>HTML semántico con soporte para lectores de pantalla y etiquetado ARIA cuando fue necesario. La navegación es inclusiva y accesible para el teclado.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Desempeño &amp; Arquitectura </h3>
+          <p>Construido sólo con JavaScript, con enfoque en ligereza de líneas, estructura modular y diseño escalable.</p>
+        </article>
+
+        <article class="margin-down">
+          <h3>Diseño Responsivo</h3>
+          <p>Diseñado con un enfoque mobile-first, utilizando Flexbox y Grid para crear una interfaz y componentes UI adaptativos.</p>
+        </article>
+
+      </div>
+
     </section>
+
     <hr>
 
     <!-- EXPERIENCE -->
-    <section data-lang="en">
-      <h2>Experience:</h2>
+    <section id="experience" aria-labelledby="experience-title">
 
-      <div>
-        <h3>KIMA Solutions</h3>
-        <p>
-          Developed interactive, real-time industrial monitoring dashboards using AngularJS and SVG for operational efficiency.
-        </p>
+      <div data-lang="en">
+
+        <h2 id="experience-title">Experience:</h2>
+
+        <article>
+          <h3>KIMA Solutions</h3>
+          <p>
+            Developed interactive, real-time industrial monitoring dashboards using AngularJS and SVG for operational efficiency.
+          </p>
+        </article>
+
+        <article>
+          <h3>Diestra Business Coaching</h3>
+          <p>
+            Built internal tools and control panels to streamline business operations and   enhance workflow efficiency.
+          </p>
+        </article>
+
       </div>
 
-      <div>
-        <h3>Diestra Business Coaching</h3>
-        <p>
-          Built internal tools and control panels to streamline business operations and enhance workflow.
-        </p>
+      <div data-lang="es">
+
+        <h2 id="experience-title">Experiencia:</h2>
+
+        <article>
+          <h3>KIMA Solutions</h3>
+          <p>
+            Desarrollo de dashboards interactivos de monitoreo industrial en tiempo real usando AngularJS y SVG para mejorar la eficiencia operativa.
+          </p>
+        </article>
+
+        <article>
+          <h3>Diestra Business Coaching</h3>
+          <p>
+            Creación de herramientas internas y paneles de control para optimizar las operaciones del negocio y mejorar los flujos de trabajo.
+          </p>
+        </article>
+
       </div>
+      
     </section>
 
-    <section data-lang="es">
-      <h2>Experiencia:</h2>
-
-      <div>
-        <h3>KIMA Solutions</h3>
-        <p>
-          Desarrollo de dashboards interactivos de monitoreo industrial en tiempo real usando AngularJS y SVG para mejorar la eficiencia operativa.
-        </p>
-      </div>
-
-      <div>
-        <h3>Diestra Business Coaching</h3>
-        <p>
-          Creación de herramientas internas y paneles de control para optimizar las operaciones del negocio y mejorar los flujos de trabajo.
-        </p>
-      </div>
-    </section>
-
-    <hr>
-
-    <!-- CV 
-    <section data-lang="en">
-      <h2>Resume</h2>
-
-      <span>Detailed professional experience:</span>
-      <a href="cv.html" target="_self">Open Resume</a>
-    </section>
-
-    <section data-lang="es">
-      <h2>CV</h2>
-
-      <span>Experiencia profesional completa:</span>
-      <a href="cv.html" target="_self">Abrir CV</a>
-    </section>
-  </main> -->
+  </main>
 
   <!-- FOOTER -->
-  <footer data-lang="en">
-    <p>&copy; Adrian Aguado. All right reserved</p>
-    <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
-    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
-  </footer>
+  <footer id="mainfooter" role="contentinfo">
+    <div data-lang="en">
+      <p>2026 &copy; Adrian Aguado. All rights reserved</p>
+      <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contact Me</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="View flag icon credits (opens in a new tab)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
 
-  <footer data-lang="es">
-    <p>&copy; Adrián Aguado. Todos los derechos reservados</p>
-    <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
-    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
+    <div data-lang="es">
+      <p>2026 &copy; Adrián Aguado. Todos los derechos reservados</p>
+      <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contáctame</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="Ver créditos de iconos de banderas (abre en nueva pestaña)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
   </footer>
 
   <script src="js/lang.js"></script>

@@ -1,347 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title id="pageTitle"></title>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adrian Aguado Galindo">
+  <meta name="description" content="Front-End Developer specialized in real-time dashboards, data visualization, and AI workflows.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css">
+  <title>AAG | Resume</title>
 </head>
 <body data-page="cv">
+  <!-- SKIP LINK (accesibilidad) -->
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="en">Skip to content</a>
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="es">Ir al contenido</a>
+  <div id="langStatus" class="hidden" aria-live="polite"></div>
+  <button class="lang" id="langToggle" aria-label="Change language" aria-pressed="false">
+    <img src="images/mx_flag.png" alt="" data-lang="en" aria-hidden="true">
+    <img src="images/us_flag.png" alt="" data-lang="es" aria-hidden="true">
+    <span id="langTag">ES</span>      
+  </button>
 
   <!-- MENU -->
-  <nav>
-    <div class="subNav" data-lang="en">
-      <a href="demo/index.html">Demo</a>
-      <a href="cv.html">Resume</a>
-      <a href="index.html">Main</a>
-    </div>
+  <nav id="mainmenu">
+    <span class="invisible" data-lang="en">Main navigation</span>
+    <span class="invisible" data-lang="es">Navegación principal</span>
+    
+    <ul class="subNav" data-lang="en">
+      <li><a href="index.html">Main</a></li>
+      <li><a href="cv.html" aria-current="page">Resume</a></li>
+      <li><a href="demo/index.html">Demo</a></li>
+    </ul>
 
-    <div class="subNav" data-lang="es">
-      <a href="demo/index.html">Demo</a>
-      <a href="cv.html">CV</a>
-      <a href="index.html">Principal</a>
-    </div>
-
-    <button class="lang" id="langToggle">
-      <img src="images/mx_flag.png" alt="The Mexican Flag, icons by amoghdesign. Flaticon" title="US-Flag" data-lang="en">
-
-      <img src="images/us_flag.png" alt="The American Flag, icons by amoghdesign. Flaticon" title="MX-Flag" data-lang="es">
-
-      <span id="langTag">ES</span>      
-    </button>
+    <ul class="subNav" data-lang="es">
+      <li><a href="index.html">Principal</a></li>
+      <li><a href="cv.html" aria-current="page">CV</a></li>
+      <li><a href="demo/index.html">Demo</a></li>
+    </ul>
   </nav>
 
-  <!-- HEADER -->
-  <header data-lang="en">
-    <h1>Adrian Aguado Galindo</h1>
-    <h2>Front-End Developer | Data Visualization | AI Workflow Developer</h2>
-    <p class="contact">
-      <a href="mailto:a.aguado.g@hotmail.com">a.aguado.g@hotmail.com</a>
-    </p>
-    <br>
-    <a href="assets/resume_aag_26.pdf" class="btn-download" download>
-      Download PDF
-    </a>
-  </header>
 
-  <header data-lang="es">
-    <h1>Adrián Aguado Galindo</h1>
-    <h2>Desarrollador Front-End | Visualización de datos | Desarrollador de flujos de trabajo para IA</h2>
-    <p class="contact">
-      <a href="mailto:a.aguado.g@hotmail.com">a.aguado.g@hotmail.com</a>
-    </p>
-    <br>
-    <a href="assets/cv_aag_26.pdf" class="btn-download" download>
-      Descargar PDF
-    </a>
+  <!-- HEADER -->
+  <header id="herobanner" role="banner">
+
+    <div data-lang="en">
+      <h1>Adrian Aguado Galindo</h1>
+      <h2>Front-End Developer | Data Visualization | AI Workflow Developer</h2>
+      <p class="contact">
+        <a href="mailto:a.aguado.g@hotmail.com" aria-label="Send an email to the developer">a.aguado.g@hotmail.com</a>
+      </p>
+      <a href="assets/resume_aag_26.pdf" class="download" download aria-label="Download resume as PDF">
+        Download PDF
+      </a>
+    </div>
+    
+    <div data-lang="es">
+      <h1>Adrián Aguado Galindo</h1>
+      <h2>Desarrollador Front-End | Visualización de datos | Desarrollador de flujos de trabajo para IA</h2>
+      <p class="contact">
+        <a href="mailto:a.aguado.g@hotmail.com" aria-label="Enviar un email al desarrollador">a.aguado.g@hotmail.com</a>
+      </p>
+      <a href="assets/cv_aag_26.pdf" class="download" download aria-label="Descargar CV en PDF">
+        Descargar PDF
+      </a>
+    </div>
+
   </header>
 
   <!-- CONTENT -->
-  <main>
+  <main id="maincontent" role="main">
     <!-- SUMMARY -->
-    <section data-lang="en">
-      <h2>Professional Summary:</h2>
-      <p>Front-End web developer with 10+ years of experience building interactive interfaces and real-time data visualization systems, for enterprise and industrial environments. Strong background in JavaScript, HTML5, CSS3, and AngularJS, with solid experience in PHP Back-End development and SQL databases.</p>
-      <p>Specialized in dynamic dashboards, SVG-based visualizations, and responsive UI development to improve data readability and operational decision-making.</p>
-      <p>Last two years, focused on AI-driven image generation and workflow development using ComfyUI and Fooocus, including pipeline design, parameter optimization, and basic Python-based customization; currently aiming to integrate AI capabilities into web-based tools and interfaces.</p>
-    </section>
+    <section id="summary" aria-labelledby="summary-title">
 
-    <section data-lang="es">
-      <h2>Resumen Profesional:</h2>
-      <p>Desarrollador web Front-End con más de una década de experiencia creando interfaces interactivas y sistemas de visualización de datos en tiempo real para ambientes empresariales e industriales. Amplia experiencia en JavaScript, HTML5, CSS3 y AngularJS, con conocimientos sólidos en desarrollo Back-End con PHP y bases de datos SQL.</p>
-      <p>Especializado en dashboards dinámicos con visualización basada en SVG y en el desarrollo de interfaces responsivas, orientadas a mejorar la interpretación de datos y la toma de decisiones operativas.</p>
-      <p>Durante los últimos dos años, enfocado en la generación de imágenes con IA y en el desarrollo de flujos de trabajo utilizando ComfyUI y Fooocus, incluyendo diseño de pipelines, optimización de parámetros y personalización básica en Python; actualmente orientado a integrar capacidades de IA en herramientas e interfaces web.</p>
+      <div data-lang="en">
+        <h2 id="summary-title">Professional Summary:</h2>
+        <p>Front-End web developer with 10+ years of experience building interactive interfaces and real-time data visualization systems, for enterprise and industrial environments. Strong background in JavaScript, HTML5, CSS3, and AngularJS, with solid experience in PHP Back-End development and SQL databases.</p>
+        <p>Specialized in dynamic dashboards, SVG-based visualizations, and responsive UI development to improve data readability and operational decision-making.</p>
+        <p>Last two years, focused on AI-driven image generation and workflow development using ComfyUI and Fooocus, including pipeline design, parameter optimization, and basic Python-based customization; currently aiming to integrate AI capabilities into web-based tools and interfaces.</p>
+      </div>
+
+      <div data-lang="es">
+        <h2 id="summary-title">Resumen Profesional:</h2>
+        <p>Desarrollador web Front-End con más de una década de experiencia creando interfaces interactivas y sistemas de visualización de datos en tiempo real para ambientes empresariales e industriales. Amplia experiencia en JavaScript, HTML5, CSS3 y AngularJS, con conocimientos sólidos en desarrollo Back-End con PHP y bases de datos SQL.</p>
+        <p>Especializado en dashboards dinámicos con visualización basada en SVG y en el desarrollo de interfaces responsivas, orientadas a mejorar la interpretación de datos y la toma de decisiones operativas.</p>
+        <p>Durante los últimos dos años, enfocado en la generación de imágenes con IA y en el desarrollo de flujos de trabajo utilizando ComfyUI y Fooocus, incluyendo diseño de pipelines, optimización de parámetros y personalización básica en Python; actualmente orientado a integrar capacidades de IA en herramientas e interfaces web.</p>
+      </div>
+      
     </section>
 
     <hr>
 
     <!-- SKILLS -->
-    <section data-lang="en">
-      <h2>Skills:</h2>
-      <h3>Front-End Development</h3>
-      <ul>
-        <li>HTML5, CSS3, JavaScript (ES6+), jQuery</li>
-        <li>Responsive design, semantic HTML, accessibility</li>
-        <li>SVG graphics, animations CSS &amp; JS</li>
-        <li>Cross-browser compatibility</li>
-        <li>AngularJS (SPA development)</li>
-        <li>Basic knowledge of React and Node.js</li>
-      </ul>
-      
-      <h3>Back-End Development</h3>
-      <ul>
-        <li>PHP development</li>
-        <li>SQL databases (CRUD operations)</li>
-        <li>REST API integration</li>
-        <li>JSON data handling</li>
-      </ul>
-      
-      <h3>Web &amp; Server Management</h3>
-      <ul>
-        <li>Apache &amp; IIS configuration</li>
-        <li>Hosting, FTP, domain &amp; DNS management</li>
-        <li>SSL implementation</li>
-        <li>Website maintenance and deployment</li>
-        <li>Version Control</li>
-      </ul>
-      
-      <h3>AI &amp; Image Processing / Workflow Development</h3>
-      <ul>
-        <li>ComfyUI workflows for image generation, editing, and pipeline design</li>
-        <li>Experience with Fooocus for controlled image generation and refinement</li>
-        <li>Development of basic custom nodes in Python for workflow customization</li>
-        <li>Face consistency techniques (FaceSwap and iterative refinement)</li>
-        <li>LoRA training and model customization</li>
-        <li>Prompt engineering and parameter optimization</li>
-      </ul>
-      <h3>Design Tools</h3>
-      <ul>
-        <li>Inkscape (SVG graphics creation and editing)</li>
-      </ul>
-    </section>
+    <section id="skills" aria-labelledby="skills-title">
 
-    <section data-lang="es">
-      <h2>Habilidades:</h2>
-      <h3>Desarrollo Front-End</h3>
-      <ul>
-        <li>HTML5, CSS3, JavaScript (ES6+), jQuery</li>
-        <li>Diseño responsivo, HTML semántico, accesibilidad</li>
-        <li>Gráficos SVG, animaciones CSS &amp; JS</li>
-        <li>Compatibilidad entre navegadores</li>
-        <li>AngularJS (desarrollo SPA)</li>
-        <li>Conocimiento básico de React y Node.js</li>
-      </ul>
+      <div data-lang="en">
+        <h2 id="skills-title">Skills:</h2>
+        <h3>Front-End Development</h3>
+        <ul>
+          <li>HTML5, CSS3, JavaScript (ES6+), jQuery</li>
+          <li>Responsive design, semantic HTML, accessibility</li>
+          <li>SVG graphics, animations CSS &amp; JS</li>
+          <li>Cross-browser compatibility</li>
+          <li>AngularJS (SPA development)</li>
+          <li>Basic knowledge of React and Node.js</li>
+        </ul>
+        
+        <h3>Back-End Development</h3>
+        <ul>
+          <li>PHP development</li>
+          <li>SQL databases (CRUD operations)</li>
+          <li>REST API integration</li>
+          <li>JSON data handling</li>
+        </ul>
+        
+        <h3>Web &amp; Server Management</h3>
+        <ul>
+          <li>Apache &amp; IIS configuration</li>
+          <li>Hosting, FTP, domain &amp; DNS management</li>
+          <li>SSL implementation</li>
+          <li>Website maintenance and deployment</li>
+          <li>Version Control</li>
+        </ul>
+        
+        <h3>AI &amp; Image Processing / Workflow Development</h3>
+        <ul>
+          <li>ComfyUI workflows for image generation, editing, and pipeline design</li>
+          <li>Experience with Fooocus for controlled image generation and refinement</li>
+          <li>Development of basic custom nodes in Python for workflow customization</li>
+          <li>Face consistency techniques (FaceSwap and iterative refinement)</li>
+          <li>LoRA training and model customization</li>
+          <li>Prompt engineering and parameter optimization</li>
+        </ul>
+        <h3>Design Tools</h3>
+        <ul>
+          <li>Inkscape (SVG graphics creation and editing)</li>
+        </ul>
+      </div>
+
+      <div data-lang="es">
+        <h2 id="skills-title">Habilidades:</h2>
+        <h3>Desarrollo Front-End</h3>
+        <ul>
+          <li>HTML5, CSS3, JavaScript (ES6+), jQuery</li>
+          <li>Diseño responsivo, HTML semántico, accesibilidad</li>
+          <li>Gráficos SVG, animaciones CSS &amp; JS</li>
+          <li>Compatibilidad entre navegadores</li>
+          <li>AngularJS (desarrollo SPA)</li>
+          <li>Conocimiento básico de React y Node.js</li>
+        </ul>
+        
+        <h3>Desarrollo Back-End</h3>
+        <ul>
+          <li>Desarrollo en PHP</li>
+          <li>Bases de datos SQL (operaciones CRUD)</li>
+          <li>Integración de REST APIs</li>
+          <li>Manejo de datos en formato JSON</li>
+        </ul>
+        
+        <h3>Web &amp; Administración de servidores</h3>
+        <ul>
+          <li>Configuración de servidores Apache &amp; IIS</li>
+          <li>Administración de hospedaje, FTP, dominio &amp; configuración DNS</li>
+          <li>Implementación de certificados SSL</li>
+          <li>Mantenimiento y despliege de sitios web</li>
+          <li>Control de versiones</li>
+        </ul>
+        
+        <h3>Procesamiento de imágenes con IA / Desarrollo de flujos de trabajo</h3>
+        <ul>
+          <li>Creación de flujos de trabajo en ComfyUI para generación y edición de imágenes</li>
+          <li>Experiencia con Fooocus para generación y refinamiento controlados de imágenes</li>
+          <li>Desarrollo de nodos básicos en Python para personalización de flujos de trabajo</li>
+          <li>Técnicas para crear personajes consistentes (intercambio y refinamiento iterativo de rostros)</li>
+          <li>Entrenamiento de LoRAs y personalización de modelos</li>
+          <li>Ingeniería de prompts y optimización de parámetros</li>
+        </ul>
+        <h3>Herramientas de diseño</h3>
+        <ul>
+          <li>Inkscape (creación y edición de gráficos SVG)</li>
+        </ul>
+      </div>
       
-      <h3>Desarrollo Back-End</h3>
-      <ul>
-        <li>Desarrollo en PHP</li>
-        <li>Bases de datos SQL (operaciones CRUD)</li>
-        <li>Integración de REST APIs</li>
-        <li>Manejo de datos en formato JSON</li>
-      </ul>
-      
-      <h3>Web &amp; Administración de servidores</h3>
-      <ul>
-        <li>Configuración de servidores Apache &amp; IIS</li>
-        <li>Administración de hospedaje, FTP, dominio &amp; configuración DNS</li>
-        <li>Implementación de certificados SSL</li>
-        <li>Mantenimiento y despliege de sitios web</li>
-        <li>Control de versiones</li>
-      </ul>
-      
-      <h3>Procesamiento de imágenes con IA / Desarrollo de flujos de trabajo</h3>
-      <ul>
-        <li>Creación de flujos de trabajo en ComfyUI para generación y edición de imágenes</li>
-        <li>Experiencia con Fooocus para generación y refinamiento controlados de imágenes</li>
-        <li>Desarrollo de nodos básicos en Python para personalización de flujos de trabajo</li>
-        <li>Técnicas para crear personajes consistentes (intercambio y refinamiento iterativo de rostros)</li>
-        <li>Entrenamiento de LoRAs y personalización de modelos</li>
-        <li>Ingeniería de prompts y optimización de parámetros</li>
-      </ul>
-      <h3>Herramientas de diseño</h3>
-      <ul>
-        <li>Inkscape (creación y edición de gráficos SVG)</li>
-      </ul>
     </section>
 
     <hr>
-
-    <!-- PROJECT 
-    <section class="cv-section">
-      <h2>Selected Project</h2>
-      <div class="cv-item">
-        <h3></h3>
-        <ul></ul>
-      </div>
-    </section> 
-    
-    <hr>-->
 
     <!-- EXPERIENCE -->
-    <section data-lang="en">
-      <h2>Professional Experience</h2>
+    <section id="experience" aria-labelledby="experience-title">
 
-      <h3>Diestra Business Coaching – Puebla</h3>
-      <p>Web Developer | Apr 2018 – Oct 2019</p>
-      <ul>
-        <li>Developed an internal corporate dashboard using AngularJS</li>
-        <li>Built dynamic control panels for form handling and data visualization</li>
-        <li>Improved the usability of internal workflows through responsive UI design</li>
-      </ul>
+      <div data-lang="en">
+        <h2 id="experience-title">Professional Experience</h2>
 
-      <h3>KIMA Solutions S.A. – Puebla</h3>
-      <p>Senior Web Developer | Aug 2017 – Mar 2018</p>
-      <ul>
-        <li>Built a real-time monitoring system for an automotive production plant</li>
-        <li>Designed SVG-based visualizations and graphics for live production data</li>
-        <li>Developed dynamic UI components using AngularJS and JavaScript</li>
-        <li>Enhanced operational visibility through interactive dashboard interfaces</li>
-      </ul>
+        <h3>Diestra Business Coaching – Puebla</h3>
+        <p>Web Developer | Apr 2018 – Oct 2019</p>
+        <ul>
+          <li>Developed an internal corporate dashboard using AngularJS</li>
+          <li>Built dynamic control panels for form handling and data visualization</li>
+          <li>Improved the usability of internal workflows through responsive UI design</li>
+        </ul>
 
-      <h3>Prefixa – Puebla</h3>
-      <p>Webmaster | Feb 2015 – Jun 2017</p>
-      <ul>
-        <li>Maintained and secured the company’s WordPress-based website and plugins</li>
-        <li>Developed custom dashboards for project tracking and statistics visualization</li>
-        <li>Managed hosting, domains, and server configurations</li>
-      </ul>
+        <h3>KIMA Solutions S.A. – Puebla</h3>
+        <p>Senior Web Developer | Aug 2017 – Mar 2018</p>
+        <ul>
+          <li>Built a real-time monitoring system for an automotive production plant</li>
+          <li>Designed SVG-based visualizations and graphics for live production data</li>
+          <li>Developed dynamic UI components using AngularJS and JavaScript</li>
+          <li>Enhanced operational visibility through interactive dashboard interfaces</li>
+        </ul>
 
-      <h3>CODICE – Mexico City</h3>
-      <p>Front-End Developer | Apr 2013 – Dec 2014</p>
-      <ul>
-        <li>Built responsive web interfaces for major brands (Nike, Santander, Suburbia)</li>
-        <li>Developed landing pages, newsletters, and mobile-friendly sites</li>
-        <li>Collaborated with design and marketing teams on multiple campaigns</li>
-      </ul>
+        <h3>Prefixa – Puebla</h3>
+        <p>Webmaster | Feb 2015 – Jun 2017</p>
+        <ul>
+          <li>Maintained and secured the company’s WordPress-based website and plugins</li>
+          <li>Developed custom dashboards for project tracking and statistics visualization</li>
+          <li>Managed hosting, domains, and server configurations</li>
+        </ul>
 
-      <h3>INE – Mexico City</h3>
-      <p>Front-End Developer | Jan 2012 – Jan 2013</p>
-      <ul>
-        <li>Developed a ballot validation system interface for electoral processes</li>
-        <li>Implemented front-end logic, PDF handling, and database interaction (CRUD APIs)</li>
-        <li>Contributed to data validation and system reliability</li>
-      </ul>
+        <h3>CODICE – Mexico City</h3>
+        <p>Front-End Developer | Apr 2013 – Dec 2014</p>
+        <ul>
+          <li>Built responsive web interfaces for major brands (Nike, Santander, Suburbia)</li>
+          <li>Developed landing pages, newsletters, and mobile-friendly sites</li>
+          <li>Collaborated with design and marketing teams on multiple campaigns</li>
+        </ul>
 
-      <h3>EASY Group – Puebla</h3>
-      <p>Full-Stack Developer &amp; Webmaster | May 2009 – Nov 2011</p>
-      <ul>
-        <li>Developed full web systems using PHP and SQL</li>
-        <li>Implemented payment systems, user authentication, microsites, and reservation platforms</li>
-        <li>Managed servers, hosting environments, and domain configurations</li>    
-      </ul>
-    </section>
+        <h3>INE – Mexico City</h3>
+        <p>Front-End Developer | Jan 2012 – Jan 2013</p>
+        <ul>
+          <li>Developed a ballot validation system interface for electoral processes</li>
+          <li>Implemented front-end logic, PDF handling, and database interaction (CRUD APIs)</li>
+          <li>Contributed to data validation and system reliability</li>
+        </ul>
 
-    <section data-lang="es">
-      <h2>Experiencia profesional</h2>
+        <h3>EASY Group – Puebla</h3>
+        <p>Full-Stack Developer &amp; Webmaster | May 2009 – Nov 2011</p>
+        <ul>
+          <li>Developed full web systems using PHP and SQL</li>
+          <li>Implemented payment systems, user authentication, microsites, and reservation platforms</li>
+          <li>Managed servers, hosting environments, and domain configurations</li>    
+        </ul>
+      </div>
 
-      <h3>Diestra Business Coaching – Puebla</h3>
-      <p>Desarrollador Web | Abr 2018 – Oct 2019</p>
-      <ul>
-        <li>Desarrollo del dashboard corporativo usando AngularJS</li>
-        <li>Creación de paneles de control para manejo de formularios y visualización de datos</li>
-        <li>Implementación de diseño de interfaz responsivo para mejorar el flujo de trabajo interno</li>
-      </ul>
+      <div data-lang="es">
+        <h2 id="experience-title">Experiencia profesional</h2>
 
-      <h3>KIMA Solutions S.A. – Puebla</h3>
-      <p>Desarrollador Web Senior | Ago 2017 – Mar 2018</p>
-      <ul>
-        <li>Creación de un sistema de monitoreo en tiempo real para una planta automotriz</li>
-        <li>Diseño de gráficos basados en SVG para mostrar información de la línea de producción</li>
-        <li>Desarrollo de componentes dinámicos usando AngularJS y JavaScript</li>
-        <li>Mejoras en la visibilidad operativa por medio de una interfaz de usuario</li>
-      </ul>
+        <h3>Diestra Business Coaching – Puebla</h3>
+        <p>Desarrollador Web | Abr 2018 – Oct 2019</p>
+        <ul>
+          <li>Desarrollo del dashboard corporativo usando AngularJS</li>
+          <li>Creación de paneles de control para manejo de formularios y visualización de datos</li>
+          <li>Implementación de diseño de interfaz responsivo para mejorar el flujo de trabajo interno</li>
+        </ul>
 
-      <h3>Prefixa – Puebla</h3>
-      <p>Webmaster | Feb 2015 – Jun 2017</p>
-      <ul>
-        <li>Mantenimiento y actualización del sitio web basado en WordPress y sus plugins</li>
-        <li>Desarrollo de dashboards personalizados para monitoreo y visualización estadística</li>
-        <li>Administración de hospedaje, dominio y configuraciones DNS</li>
-      </ul>
+        <h3>KIMA Solutions S.A. – Puebla</h3>
+        <p>Desarrollador Web Senior | Ago 2017 – Mar 2018</p>
+        <ul>
+          <li>Creación de un sistema de monitoreo en tiempo real para una planta automotriz</li>
+          <li>Diseño de gráficos basados en SVG para mostrar información de la línea de producción</li>
+          <li>Desarrollo de componentes dinámicos usando AngularJS y JavaScript</li>
+          <li>Mejoras en la visibilidad operativa por medio de una interfaz de usuario</li>
+        </ul>
 
-      <h3>CODICE – CDMX</h3>
-      <p>Desarrollador Front-End | Abr 2013 – Dic 2014</p>
-      <ul>
-        <li>Creación de interfaces responsivas para marcas reconocidas (Nike, Santander, Suburbia)</li>
-        <li>Maquetación de páginas principales, sitios móviles y boletines de noticias</li>
-        <li>Colaboración estrecha con los equipos de mercadotecnia y diseño en múltiples campañas</li>
-      </ul>
+        <h3>Prefixa – Puebla</h3>
+        <p>Webmaster | Feb 2015 – Jun 2017</p>
+        <ul>
+          <li>Mantenimiento y actualización del sitio web basado en WordPress y sus plugins</li>
+          <li>Desarrollo de dashboards personalizados para monitoreo y visualización estadística</li>
+          <li>Administración de hospedaje, dominio y configuraciones DNS</li>
+        </ul>
 
-      <h3>INE – CDMX</h3>
-      <p>Desarrollador Front-End | Ene 2012 – Ene 2013</p>
-      <ul>
-        <li>Desarrollo de una interfaz para validación de boletas electorales</li>
-        <li>Implementación de la lógica para el manejo de PDF e interacción con bases de datos (CRUD APIs)</li>
-        <li>Contribuciones para confiabilidad del sistema y validación de datos</li>
-      </ul>
+        <h3>CODICE – CDMX</h3>
+        <p>Desarrollador Front-End | Abr 2013 – Dic 2014</p>
+        <ul>
+          <li>Creación de interfaces responsivas para marcas reconocidas (Nike, Santander, Suburbia)</li>
+          <li>Maquetación de páginas principales, sitios móviles y boletines de noticias</li>
+          <li>Colaboración estrecha con los equipos de mercadotecnia y diseño en múltiples campañas</li>
+        </ul>
 
-      <h3>EASY Group – Puebla</h3>
-      <p>Desarrollador Full-Stack &amp; Webmaster | May 2009 – Nov 2011</p>
-      <ul>
-        <li>Desarrollo integral del sitio web usando PHP y SQL para Back-End</li>
-        <li>Implementación de sistemas de pago, micrositios, autenticación de usuarios y plataformas de reservaciones</li>
-        <li>Configuración del servidor, hospedaje, configuración de dominio y DNS</li>    
-      </ul>
-    </section>
+        <h3>INE – CDMX</h3>
+        <p>Desarrollador Front-End | Ene 2012 – Ene 2013</p>
+        <ul>
+          <li>Desarrollo de una interfaz para validación de boletas electorales</li>
+          <li>Implementación de la lógica para el manejo de PDF e interacción con bases de datos (CRUD APIs)</li>
+          <li>Contribuciones para confiabilidad del sistema y validación de datos</li>
+        </ul>
 
-    <hr>
-
-    <!-- EXTRA -->
-    <section data-lang="en">
-      <h2>Additional Experience (Customer Service)</h2>
-      <ul>
-        <li>Experience in customer support roles across telecom, insurance, and technical services (2005–2026)</li>
-        <li>Strong communication, problem-solving, and client interaction skills</li>
-        <li>Ability to work under pressure and handle complex user issues</li>
-      </ul>
-    </section>
-
-    <section data-lang="es">
-      <h2>Experiencia Adicional (Atención al Cliente)</h2>
-      <ul>
-        <li>Experiencia en atención a clientes en diferentes áreas: telecomunicaciones, aseguradoras y soporte técnico (2005 - 2026)</li>
-        <li>Fuertes habilidades de comunicación, resolución de problemas e interacción con clientes</li>
-        <li>Habilidad para trabajar bajo presión y manejar situaciones complejas</li>
-      </ul>
+        <h3>EASY Group – Puebla</h3>
+        <p>Desarrollador Full-Stack &amp; Webmaster | May 2009 – Nov 2011</p>
+        <ul>
+          <li>Desarrollo integral del sitio web usando PHP y SQL para Back-End</li>
+          <li>Implementación de sistemas de pago, micrositios, autenticación de usuarios y plataformas de reservaciones</li>
+          <li>Configuración del servidor, hospedaje, configuración de dominio y DNS</li>    
+        </ul>
+      </div>
+      
     </section>
 
     <hr>
 
     <!-- EXTRA -->
-    <section data-lang="en">
-      <h2>Current Project (in progress): Industrial Monitoring Dashboard (Demo)</h2>
-      <ul>
-        <li>Recreating a real-time monitoring interface based on industrial systems experience</li>
-        <li>Implementing simulated production data with dynamic UI updates</li>
-        <li>Designing the interactive dashboard components and visual indicators</li>
-        <li>Applying JavaScript and SVG for data visualization</li>
-        <li>Planned integration of AI-related concepts for workflow optimization</li>
-      </ul>
+    <section id="extra" aria-labelledby="extra-title">
+
+      <div data-lang="en">
+        <h2 id="extra-title">Additional Experience (Customer Service)</h2>
+        <ul>
+          <li>Experience in customer support roles across telecom, insurance, and technical services (2005–2026)</li>
+          <li>Strong communication, problem-solving, and client interaction skills</li>
+          <li>Ability to work under pressure and handle complex user issues</li>
+        </ul>
+      </div>
+
+      <div data-lang="es">
+        <h2 id="extra-title">Experiencia Adicional (Atención al Cliente)</h2>
+        <ul>
+          <li>Experiencia en atención a clientes en diferentes áreas: telecomunicaciones, aseguradoras y soporte técnico (2005 - 2026)</li>
+          <li>Fuertes habilidades de comunicación, resolución de problemas e interacción con clientes</li>
+          <li>Habilidad para trabajar bajo presión y manejar situaciones complejas</li>
+        </ul>
+      </div>
+      
     </section>
 
-    <section data-lang="es">
-      <h2>Proyecto Actual (en progreso): Dashboard de Monitoreo Industrial (Demo)</h2>
-      <ul>
-        <li>Crear una interfaz de monitoreo en tiempo real, tomando como base la experiencia previa en sistemas industriales</li>
-        <li>Implementar datos de producción simulados y actualización dinámica de la interfaz</li>
-        <li>Diseño de los componentes interactivos y los indicadores visuales</li>
-        <li>Aplicación de SVG y JavaScript para visualización de datos</li>
-        <li>Integración de conceptos relacionados con la IA para optimizar el flujo de trabajo</li>
-      </ul>
+    <hr>
+
+    <!-- PROJECT -->
+    <section id="project" aria-labelledby="project-title">
+
+      <div data-lang="en">
+        <h2 id="project-title">Current Project (in progress): Industrial Monitoring Dashboard (Demo)</h2>
+        <ul>
+          <li>Recreating a real-time monitoring interface based on industrial systems experience</li>
+          <li>Implementing simulated production data with dynamic UI updates</li>
+          <li>Designing the interactive dashboard components and visual indicators</li>
+          <li>Applying JavaScript and SVG for data visualization</li>
+          <li>Planned integration of AI-related concepts for workflow optimization</li>
+        </ul>
+      </div>
+
+      <div data-lang="es">
+        <h2 id="project-title">Proyecto Actual (en progreso): Dashboard de Monitoreo Industrial (Demo)</h2>
+        <ul>
+          <li>Crear una interfaz de monitoreo en tiempo real, tomando como base la experiencia previa en sistemas industriales</li>
+          <li>Implementar datos de producción simulados y actualización dinámica de la interfaz</li>
+          <li>Diseño de los componentes interactivos y los indicadores visuales</li>
+          <li>Aplicación de SVG y JavaScript para visualización de datos</li>
+          <li>Integración de conceptos relacionados con la IA para optimizar el flujo de trabajo</li>
+        </ul>
+      </div>
+      
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer data-lang="en">
-    <p>&copy; Adrian Aguado. All right reserved</p>
-    <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
-    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
-  </footer>
+  <footer id="mainfooter" role="contentinfo">
+    <div data-lang="en">
+      <p>2026 &copy; Adrian Aguado. All rights reserved</p>
+      <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contact Me</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="View flag icon credits (opens in a new tab)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
 
-  <footer data-lang="es">
-    <p>&copy; Adrián Aguado. Todos los derechos reservados</p>
-    <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
-    <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank">Flag icons by amoghdesign</a>
+    <div data-lang="es">
+      <p>2026 &copy; Adrián Aguado. Todos los derechos reservados</p>
+      <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contáctame</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="Ver créditos de iconos de banderas (abre en nueva pestaña)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
   </footer>
 
   <script src="js/lang.js"></script>

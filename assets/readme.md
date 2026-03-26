@@ -43,3 +43,12 @@ SVG-based visualization system
 Interactive UI controls
 Responsive layout
 Clean and maintainable code structure
+
+
+FEATURETTES:
+
+“I implemented dynamic language switching with accessibility support, including live announcements and document-level language updates.”
+“Navigation is fully accessible, including language-aware labeling and current page indication.”
+“I follow modern semantic HTML practices and avoid deprecated elements while ensuring accessible call-to-actions.”
+
+Code weight, no framework, artisanal coding, responsive, semantic, accesible
