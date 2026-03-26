@@ -12,8 +12,8 @@
 </head>
 <body data-page="portfolio">
   <!-- SKIP LINK (accesibilidad) -->
-  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="en">Skip to content</a>
-  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="es">Ir al contenido</a>
+  <a href="#mainContent" class="skip-link fixed-txt-size" data-lang="en">Skip to content</a>
+  <a href="#mainContent" class="skip-link fixed-txt-size" data-lang="es">Ir al contenido</a>
   <div id="langStatus" class="hidden" aria-live="polite"></div>
   <button class="lang" id="langToggle" aria-label="Change language" aria-pressed="false">
     <img src="images/mx_flag.png" alt="" data-lang="en" aria-hidden="true">
@@ -25,18 +25,24 @@
   <nav id="mainmenu">
     <span class="invisible" data-lang="en">Main navigation</span>
     <span class="invisible" data-lang="es">Navegación principal</span>
-    
-    <ul class="subNav" data-lang="en">
-      <li><a href="index.html" aria-current="page">Main</a></li>
-      <li><a href="cv.html">Resume</a></li>
-      <li><a href="demo/index.html">Demo</a></li>
-    </ul>
 
-    <ul class="subNav" data-lang="es">
-      <li><a href="index.html" aria-current="page">Principal</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="demo/index.html">Demo</a></li>
-    </ul>
+    <button class="menu-button" id="menuToggle" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
+      <span class="material-icons" aria-hidden="true">menu</span>
+    </button>
+  
+    <div id="menuPanel" class="menu-panel">
+      <ul class="sub-menu" data-lang="en">
+        <li><a href="index.html" aria-current="page">Main</a></li>
+        <li><a href="cv.html">Resume</a></li>
+        <li><a href="demo/index.html">Demo</a></li>
+      </ul>
+
+      <ul class="sub-menu" data-lang="es">
+        <li><a href="index.html" aria-current="page">Principal</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="demo/index.html">Demo</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- HEADER -->
@@ -406,6 +412,7 @@
     </div>
   </footer>
 
+  <script src="js/app.js"></script>
   <script src="js/lang.js"></script>
 </body>
 </html>

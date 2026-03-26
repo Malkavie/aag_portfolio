@@ -25,20 +25,25 @@
   <nav id="mainmenu">
     <span class="invisible" data-lang="en">Main navigation</span>
     <span class="invisible" data-lang="es">Navegación principal</span>
+
+    <button class="menu-button" id="menuToggle" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
+      <span class="material-icons" aria-hidden="true">menu</span>
+    </button>
     
-    <ul class="subNav" data-lang="en">
-      <li><a href="index.html">Main</a></li>
-      <li><a href="cv.html" aria-current="page">Resume</a></li>
-      <li><a href="demo/index.html">Demo</a></li>
-    </ul>
+    <div id="menuPanel" class="menu-panel">
+      <ul class="sub-menu" data-lang="en">
+        <li><a href="index.html">Main</a></li>
+        <li><a href="cv.html" aria-current="page">Resume</a></li>
+        <li><a href="demo/index.html">Demo</a></li>
+      </ul>
 
-    <ul class="subNav" data-lang="es">
-      <li><a href="index.html">Principal</a></li>
-      <li><a href="cv.html" aria-current="page">CV</a></li>
-      <li><a href="demo/index.html">Demo</a></li>
-    </ul>
+      <ul class="sub-menu" data-lang="es">
+        <li><a href="index.html">Principal</a></li>
+        <li><a href="cv.html" aria-current="page">CV</a></li>
+        <li><a href="demo/index.html">Demo</a></li>
+      </ul>
+    </div>
   </nav>
-
 
   <!-- HEADER -->
   <header id="herobanner" role="banner">
@@ -321,35 +326,6 @@
       
     </section>
 
-    <hr>
-
-    <!-- PROJECT -->
-    <section id="project" aria-labelledby="project-title">
-
-      <div data-lang="en">
-        <h2 id="project-title">Current Project (in progress): Industrial Monitoring Dashboard (Demo)</h2>
-        <ul>
-          <li>Recreating a real-time monitoring interface based on industrial systems experience</li>
-          <li>Implementing simulated production data with dynamic UI updates</li>
-          <li>Designing the interactive dashboard components and visual indicators</li>
-          <li>Applying JavaScript and SVG for data visualization</li>
-          <li>Planned integration of AI-related concepts for workflow optimization</li>
-        </ul>
-      </div>
-
-      <div data-lang="es">
-        <h2 id="project-title">Proyecto Actual (en progreso): Dashboard de Monitoreo Industrial (Demo)</h2>
-        <ul>
-          <li>Crear una interfaz de monitoreo en tiempo real, tomando como base la experiencia previa en sistemas industriales</li>
-          <li>Implementar datos de producción simulados y actualización dinámica de la interfaz</li>
-          <li>Diseño de los componentes interactivos y los indicadores visuales</li>
-          <li>Aplicación de SVG y JavaScript para visualización de datos</li>
-          <li>Integración de conceptos relacionados con la IA para optimizar el flujo de trabajo</li>
-        </ul>
-      </div>
-      
-    </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -377,6 +353,7 @@
     </div>
   </footer>
 
+  <script src="js/app.js"></script>
   <script src="js/lang.js"></script>
 </body>
 </html>
