@@ -7,9 +7,9 @@ let isMenuOpen = false // Initial state
 function setMenuAccessibility(isOpen) {
   menuLinks.forEach(link => {
     if (isOpen) {
-      link.removeAttribute("tabindex");
+      link.removeAttribute('tabindex');
     } else {
-      link.setAttribute("tabindex", "-1");
+      link.setAttribute('tabindex', '-1');
     }
   });
 }
@@ -22,10 +22,20 @@ if (menuButton) {
   menuButton.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
     // Toggle class
-    menuPanel.classList.toggle("menu-open", isMenuOpen)
+    menuPanel.classList.toggle('menu-open', isMenuOpen)
     // Update ARIA
-    menuButton.setAttribute("aria-expanded", isMenuOpen)
+    menuButton.setAttribute('aria-expanded', isMenuOpen)
     // Update accessibility
     setMenuAccessibility(isMenuOpen)
   })
 }
+
+// Cerrar con tecla Esc
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && isMenuOpen) {
+    isMenuOpen = false;
+    menuPanel.classList.remove('menu-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    setMenuAccessibility(false);
+  }
+})

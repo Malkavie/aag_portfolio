@@ -210,11 +210,10 @@ section {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  border: 1px solid #ccc;
   background-color: #020617;
 }
 .projects-card img {
-  width: auto;
+  width: 100%;
   max-width: 500px;
   height: auto;
   object-fit: cover;
@@ -239,7 +238,7 @@ section {
 }
 @media (min-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (min-width: 1000px) {
@@ -247,18 +246,18 @@ section {
     max-width: 85vw;
   }
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
   .projects-card {
     flex-direction: row;
     align-items: center;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1700px) {
   .grid-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -287,6 +286,11 @@ footer {
   background: #1e293b;
   padding: 1.5rem;
   border-radius: 1rem;
+}
+.card-alt {
+  padding: 1.5rem;
+  border: 1px solid #997016;
+  border-radius: 0.5rem;
 }
 .fixed-txt-size {
   font-size: max(14px) !important;
