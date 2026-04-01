@@ -51,7 +51,7 @@ html {
   width: 100%;
   height: auto;
   overflow: scroll;
-  /*font-size: calc(16px + 6 * ((100vw - 320px) / 680)); */
+  /*font-size: calc( 16px + 6 * ((100vw - 320px) / 680) ); */
   font-weight: 400;
   scroll-behavior: smooth;
 }

@@ -1,0 +1,42 @@
+VALUE / HIGHLIGHTS
+
+👉 mini resumen rápido
+
+3–4 puntos clave
+tipo “features rápidas”
+2. PROBLEM
+
+👉 dolor del usuario
+
+texto corto
+bullets
+3. SOLUTION
+
+👉 qué hace el producto
+
+bloques explicativos
+4. FEATURES
+
+👉 más visual / cards
+
+lista estructurada
+repetible (aquí se pone interesante)
+5. PRODUCT PREVIEW
+
+👉 mock del dashboard
+
+imagen / SVG / layout
+CTA “View Dashboard”
+6. USE CASES
+
+👉 contexto de negocio
+
+lista de escenarios
+7. PRICING
+
+👉 tarjetas de precios
+
+2–3 planes
+8. CTA FINAL
+
+👉 cierre fuerte

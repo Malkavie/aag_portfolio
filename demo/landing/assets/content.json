@@ -1,0 +1,40 @@
+{
+  "en":  {
+    "hero": {
+      "tag": "header",
+      "title": "Real-Time Urban Intelligence, Simplified",
+      "subtitle": "Monitor population dynamics, track activity, and make data-driven decisions from a single unified platform.",
+      "cta": {
+        "primary": "Get Started",
+        "secondary": "View Dashboard"
+      }
+    },
+    "value": {
+      "tag": "section",
+      "main": true,
+      "class": "value",
+      "title": "Operational Intelligence at Scale",
+      "items": [
+        {
+          "icon": "insights",
+          "title": "Real-Time Visibility",
+          "desc": "Monitor urban dynamics as they happen with live data streams and instant updates.",
+          "image": "img/value_card(1).png"
+        },
+        {
+          "icon": "hub",
+          "title": "Connected Data Layers",
+          "desc": "Integrate multiple data sources into a unified view for deeper analysis.",
+          "image": "img/value_card(2).png"
+        },
+        {
+          "icon": "bolt",
+          "title": "Actionable Insights",
+          "desc": "Transform complex datasets into clear, actionable decisions in seconds.",
+          "image": "img/value_card(3).png"
+        }
+      ]
+    }
+  },
+  "es":  {}
+}
