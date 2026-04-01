@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adrian Aguado Galindo">
+  <meta name="description" content="Front-End Developer specialized in real-time dashboards, data visualization, and AI workflows.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="../images/favicon.ico">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>AAG | Resume</title>
+</head>
+<body data-page="demo">
+  <!-- SKIP LINK (accesibilidad) -->
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="en">Skip to content</a>
+  <a href="#mainContent" class="skip-link fixedTxtSize" data-lang="es">Ir al contenido</a>
+  <div id="langStatus" class="hidden" aria-live="polite"></div>
+  <button class="lang" id="langToggle" aria-label="Change language" aria-pressed="false">
+    <img src="../images/mx_flag.png" alt="" data-lang="en" aria-hidden="true">
+    <img src="../images/us_flag.png" alt="" data-lang="es" aria-hidden="true">
+    <span id="langTag">ES</span>      
+  </button>
+
+  <!-- MENU -->
+  <nav id="mainmenu">
+    <span class="invisible" data-lang="en">Main navigation</span>
+    <span class="invisible" data-lang="es">Navegación principal</span>
+
+    <button class="menu-button" id="menuToggle" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
+      <span class="material-icons" aria-hidden="true">menu</span>
+    </button>
+    
+    <div id="menuPanel" class="menu-panel">
+      <ul class="sub-menu" data-lang="en">
+        <li><a href="../index.html">Main</a></li>
+        <li><a href="../cv.html">Resume</a></li>
+        <li><a href="../demo/index.html" aria-current="page">Demo</a></li>
+      </ul>
+
+      <ul class="sub-menu" data-lang="es">
+        <li><a href="../index.html">Principal</a></li>
+        <li><a href="../cv.html">CV</a></li>
+        <li><a href="../demo/index.html" aria-current="page">Demo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header id="herobanner" role="banner">
+
+    <div data-lang="en">
+      <h1>Vehicle Tracking in Assembly Line</h1>
+      <h2 class="tagline">Simulated industrial production tracking system with real-time state updates, event handling and live metrics.</h2>
+      <p>All data is simulated.</p>
+    </div>
+
+    <div data-lang="es">
+      <h1>Rastreo de vehículos en línea de ensamble</h1>
+      <h2 class="tagline">Sistema simulado de seguimiento de producción industrial con actualización en tiempo real, manejo de eventos y métricas en vivo.</h2>
+      <p>Los datos son simulados.</p>
+    </div>
+    
+  </header>
+
+  <!-- CONTENT -->
+  <main id="maincontent" role="main">
+    
+    <section data-lang="en">
+      <button onclick="toggleRun(this)">Pause</button>
+      <button onclick="forceError(this)">Inject Error</button>
+    </section>
+    <section data-lang="es">
+      <button onclick="toggleRun(this)">Pausar</button>
+      <button onclick="forceError(this)">Forzar Error</button>
+    </section>
+    <!-- Pipeline (visual principal) -->
+    <section class="lineSection">
+      <h2 data-lang="en">Assembly Line</h2> 
+      <h2 data-lang="es">Línea de ensamble</h2>  
+      <svg id="lineSvg" width="100%" height="120" viewBox="0 0 1000 120"></svg>
+      <p id="timestamp">...</p>
+    </section>
+
+    <!-- Panel de información -->
+    <section class="infoSection">
+      <article class="card">
+        <h2 data-lang="en">Vehicle Data</h2>
+        <h2 data-lang="es">Datos del vehículo</h2>
+        <div>
+          <p>
+            <strong>VIN:</strong> 
+            <span id="vin"></span>
+          </p>
+          <p>
+            <strong>Model:</strong> 
+            <span id="model"></span>
+          </p>
+          <p>
+            <strong>Market:</strong> 
+            <span id="market"></span>
+          </p>
+          <p>
+            <strong>Status:</strong> 
+            <span id="status"></span>
+          </p>
+          <p>
+            <strong>Stage:</strong> 
+            <span id="stage"></span>
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 data-lang="en">Production Stats</h2>
+        <h2 data-lang="es">Estadísticas</h2>
+        <p>
+          <span data-lang="en">Progress: </span>
+          <span data-lang="es">Progreso: </span>
+          <span id="progress" class="tagline_bis"></span>
+        </p>
+        <p>
+          <span data-lang="en">Vehicles Processed: </span>
+          <span data-lang="es">Vehículos procesados: </span>
+           <span id="count" class="tagline"></span>
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="mainfooter" role="contentinfo">
+    <div data-lang="en">
+      <p>2026 &copy; Adrian Aguado. All rights reserved</p>
+      <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contact Me</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="View flag icon credits (opens in a new tab)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
+
+    <div data-lang="es">
+      <p>2026 &copy; Adrián Aguado. Todos los derechos reservados</p>
+      <p class="tagline">Desarrollado para la web usando HTML, CSS y JavaScript</p>
+      <p>
+        <a href="mailto:a.aguado.g@hotmail.com">Contáctame</a>
+      </p>
+      <p>
+        <a href="https://www.flaticon.com/packs/international-circular-flags" target="_blank" rel="noopener noreferrer" aria-label="Ver créditos de iconos de banderas (abre en nueva pestaña)">Flag icons by amoghdesign</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/lang.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
