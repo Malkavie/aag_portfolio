@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Adrian Aguado Galindo">
+  <meta name="description" content="Demo of a sales dashboard built with custom SVG graphics and CSS transitions and animations. All data is simulated.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="main.css">
+  <title>AAG | Sales Dashboard | Demo</title>
+</head>
+<body>
+
+  <!-- MENU -->
+  <nav id="mainmenu">
+    <span class="invisible">Main navigation</span>
+
+    <button id="menuToggle" class="menuButton" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
+      <span class="material-icons" aria-hidden="true">menu</span>
+    </button>
+  
+    <div id="menuPanel" class="menuPanel">
+      <ul class="mainMenu">
+        <li><a href="../index.html">Main</a></li>
+        <li><a href="../cv.html">Resume</a></li>
+
+        <li class="submenuCont">
+          <button class="submenuToggle" aria-expanded="false" aria-controls="projectsSubmenu" onclick="toggleSubmenu(this)">
+            Projects <span class="material-icons">arrow_drop_down</span>
+          </button>
+          <ul class="submenuPanel">
+            <li><a href="../assembly/index.html">Assembly Line</a></li>
+            <li><a href="../dashboard/index.html" aria-current="page">Sales Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
+
+  </nav>
+
+  <header id="mainheader" class="header" aria-labelledby="hero-title">
+    <h1 id="hero-title">Sales Dashboard</h1>
+    <div class="actions">
+      <button>Date Range</button>
+      <button>Export</button>
+    </div>
+  </header>
+
+  <main id="maincontent">
+    <section class="kpis" aria-labelledby="kpis-title">
+
+      <article class="card" aria-labelledby="total-title">
+        <h3 id="total-title">Total Revenue</h3>
+        <p>$48,320</p>
+      </article>
+
+      <article class="card" aria-labelledby="sales-title">
+        <h3 id="sales-title">Sales</h3>
+        <p>1,240</p>
+      </article>
+
+      <article class="card" aria-labelledby="conversion-title">
+        <h3 id="conversion-title">Conversion Rate</h3>
+        <p>3.8%</p>
+      </article>
+
+      <article class="card" aria-labelledby="avgvalue-title">
+        <h3 iv="avgvalue-title">Avg Order Value</h3>
+        <p>$39.00</p>
+      </article>
+
+    </section>
+
+    <section class="mainchart card" aria-labelledby="salesperf-title">
+      <h2 id="salesperf-title">Sales Performance</h2>
+      <svg id="lineChart" viewBox="0 0 600 300" role="img" aria-labelledby="line-title line-desc">
+        <title id="line-title">Weekly Sales Performance Chart</title>
+        <desc id="line-desc">
+          This line chart shows revenue growth over the last 7 days
+        </desc>
+      </svg>
+      <p class="sr-only">
+        Revenue increased from $1200 on Monday to $3000 on Saturday, with slight variation midweek.
+      </p>
+    </section>
+
+    <section class="secondary">
+      <article class="card" aria-labelledby="topprod-title">
+        <h2 id="topprod-title">Top Selling Products</h2>
+        <svg id="barChart" viewBox="0 0 600 300" role="img" aria-labelledby="bar-title bar-desc">
+          <title id="bar-title">Top Seeling Products Chart</title>
+          <desc id="bar-desc">
+            This bar chart shows the top selling products
+          </desc>
+        </svg>
+        <p class="sr-only"></p>
+      </article>
+
+      <article class="card" aria-labelledby="revenuebreak-title">
+        <h2 id="revenuebreak-title">Revenue Breakdown</h2>
+        <svg id="pieChart" viewBox="0 0 200 250" role="img" aria-labelledby="donut-title donut-desc">
+          <title id="donut-title">Revenue Breakdown Chart</title>
+          <desc id="donut-desc">
+            This donut chart shows revenue distribution by channel
+          </desc>
+        </svg>
+        <p class="sr-only"></p>
+      </article>
+    </section>
+
+    <section class="table card">
+      <h2>Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Wireless Headphones</td>
+            <td>$120</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Smart Watch</td>
+            <td>$89</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- GLOBAL TOOLTIP FOR GRAPHICS -->
+    <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer id="mainfooter">
+  </footer>
+
+  <!---->
+  <script src="app.js"></script>
+</body>
+</html>

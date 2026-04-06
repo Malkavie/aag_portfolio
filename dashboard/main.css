@@ -1,0 +1,296 @@
+/* FONTS AND ICONS */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), 
+        url('../fnt/material_icons_regular.woff') format('woff');
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    vertical-align: middle;
+}
+
+/* COLORS */
+
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+/* RESPONSIVE TEXT */
+@media screen and (orientation: portrait) {
+  html {
+    font-size: max(14px, 1.2vh);
+  }
+}
+@media screen and (orientation: landscape) {
+  html {
+    font-size: max(14px, 1.5vh);
+  }
+}
+
+/* ELEMENT STYLES */
+html {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #fff8e7;
+  font-weight: 400;
+}
+header {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+img, svg {
+  width: 100%;
+  height: auto;
+}
+
+/* MAIN MENU */
+/* Structure: 
+nav (root element for the main menu) -> 
+menuPanel (a div that contains both menues, EN-ES) -> 
+mainMenu (Contains individual menu languages in an ul element for each) -> 
+submenuCont (li element with the submenu, includes the toggle button and the submenu panel) -> 
+submenuPanel (an ul element that contains the projects links)  */
+nav,
+.menuPanel,
+.mainMenu,
+.submenuCont {
+  overflow: visible;
+}
+nav {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  height: auto;
+  background: #020617;
+  z-index: 99;
+}
+.menuPanel {
+  padding: 0.5rem;
+  position: absolute;
+  width: 250px;
+  height: auto;
+  background: #1e293b;
+  border-radius: 1rem;
+  display: none;
+}
+.menuPanel.menuOpen {
+  display: block;
+  transition: all 0.5s ease;
+}
+.mainMenu {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mainMenu li {
+  min-width: 200px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mainMenu a {
+  width: 100%;
+}
+.submenuCont {
+  position: relative;
+}
+.submenuPanel {
+  position: relative;
+  top: 100%;
+  left: 0;
+  padding: 0 0 0 1rem;
+  min-width: 150px;
+  list-style: none;
+  background: #1e293b;
+  z-index: 999;
+  border-radius: 1rem;
+  display: none;
+}
+.submenuPanel  {
+  padding: 1rem;
+}
+.submenuPanel a {
+  width: 100%;
+}
+.submenuPanel.submenuOpen {
+  display: block;
+  transition: all 0.3s ease;
+}
+/* Button and links standarization for menu */
+.mainMenu a, .submenuToggle {
+  height: 100%;
+  padding: 1rem;
+  color: #38bdf8;
+  font-weight: 400;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.submenuToggle {
+  font: inherit;
+  line-height: 0.7;
+  opacity: 1;
+  appearance: none;
+}
+.mainMenu a:hover, .submenuToggle:hover {
+  font: inherit;
+  font-weight: 600;
+  color: #997016;
+  text-decoration: underline;
+}
+.mainMenu a:active, .submenuToggle:active {
+  font: inherit;
+  font-weight: 600;
+  color: #997016;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+/* Menu Button */
+.menuButton {
+  font: inherit;
+  font-weight: 400;
+  color: #020617;
+  background: #38bdf8;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.menuButton:hover {
+  font-weight: 600;
+  opacity: 1;
+  text-decoration: underline;
+}
+.menuButton:active {
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  color: #fff8e7;
+  text-decoration: none;
+}
+/* Menu responsiveness for DESKTOP */
+@media (min-width: 1000px) {
+  nav {
+    top: 0;
+    left: 0;
+  }
+  .menuPanel {
+    width: 100vw;
+    margin: 0 auto;
+    background: #020617;
+    border-radius: 0;
+    overflow: visible;
+    display: block;
+    position: relative;
+  }
+  .menuButton {
+    display:none;
+  }
+  .mainMenu {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .mainMenu li {
+    min-width: 250px;
+  }
+  .mainMenu a {
+    width: auto;
+  }
+  .submenuPanel {
+    position: absolute;
+  }
+}
+
+/* SECTIONS */
+section {
+  padding: 1.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td, th {
+  padding: 1rem;
+  border-bottom: 1px solid #334155;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.mainchart {
+  margin: 1.5rem;
+}
+.secondary {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+.table {
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+.tooltip {
+  position: absolute;
+  background: #1e293b;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 99;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Use this to keep an item hidden all times */
+.invisible {
+  display: none;
+}
+/* Use this to show/hide UI elements when needed */ 
+.hidden {
+  display: none;
+}

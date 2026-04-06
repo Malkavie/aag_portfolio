@@ -26,21 +26,41 @@
     <span class="invisible" data-lang="en">Main navigation</span>
     <span class="invisible" data-lang="es">Navegación principal</span>
 
-    <button class="menu-button" id="menuToggle" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
+    <button id="menuToggle" class="menuButton" aria-label="Open Menu" aria-expanded="false" aria-controls="menuPanel">
       <span class="material-icons" aria-hidden="true">menu</span>
     </button>
-    
-    <div id="menuPanel" class="menu-panel">
-      <ul class="sub-menu" data-lang="en">
+  
+    <div id="menuPanel" class="menuPanel">
+      <ul class="mainMenu" data-lang="en">
         <li><a href="index.html">Main</a></li>
         <li><a href="cv.html" aria-current="page">Resume</a></li>
-        <li><a href="demo/index.html">Demo</a></li>
+
+        <li class="submenuCont">
+          <button class="submenuToggle" aria-expanded="false" aria-controls="projectsSubmenu" onclick="toggleSubmenu(this)">
+            Projects <span class="material-icons">arrow_drop_down</span>
+          </button>
+          <ul class="submenuPanel">
+            <li><a href="assembly/">Assembly Line</a></li>
+            <li><a href="dashboard/index.html">Sales Dashboard</a></li>
+          </ul>
+        </li>
+
       </ul>
 
-      <ul class="sub-menu" data-lang="es">
+      <ul class="mainMenu" data-lang="es">
         <li><a href="index.html">Principal</a></li>
         <li><a href="cv.html" aria-current="page">CV</a></li>
-        <li><a href="demo/index.html">Demo</a></li>
+
+        <li class="submenuCont">
+          <button class="submenuToggle" aria-expanded="false" aria-controls="projectsSubmenu" onclick="toggleSubmenu(this)">
+            Proyectos <span class="material-icons">arrow_drop_down</span>
+          </button>
+          <ul class="submenuPanel">
+            <li><a href="assembly/index.html">Línea de ensamble</a></li>
+            <li><a href="dashboard/index.html">Dashboard de ventas</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </nav>

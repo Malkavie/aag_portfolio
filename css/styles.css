@@ -1,4 +1,4 @@
-/* Material Icons */
+/* MATERIAL ICONS */
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -12,16 +12,15 @@
     font-style: normal;
     font-weight: 400;
     display: inline-block;
-    line-height: 1;
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-    vertical-align: bottom;
+    vertical-align: middle;
 }
 
-/* Reset */
+/* RESET */
 *,
 *::before,
 *::after {
@@ -30,11 +29,11 @@
   box-sizing: border-box;
   border: 0;
   outline: 0;
-  overflow: hidden;
   z-index: 0;
 }
 
-/* Responsive */
+/* RESPONSIVE TEXT AND IMAGES */
+/*font-size: calc( 16px + 6 * ((100vw - 320px) / 680) ); */
 @media screen and (orientation: portrait) {
   html {
     font-size: max(14px, 1.2vh);
@@ -42,16 +41,19 @@
 }
 @media screen and (orientation: landscape) {
   html {
-    font-size: max(14px, 1.5vh);
+    font-size: max(14px, 1.7vh);
   }
 }
+img, svg {
+  width: 100%;
+  height: auto;
+}
 
-/* Elements Definition */
+/* BASE CONTAINERS */
 html {
   width: 100%;
   height: auto;
   overflow: scroll;
-  /*font-size: calc( 16px + 6 * ((100vw - 320px) / 680) ); */
   font-weight: 400;
   scroll-behavior: smooth;
 }
@@ -60,6 +62,8 @@ body {
   background: #0f172a;
   color: #fff8e7; /* Cosmic Latte */
 }
+
+/* HEADINGS, TEXT AND DIVIDERS */
 h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
 }
@@ -69,8 +73,17 @@ h2 {
 p {
   padding: 0.5rem;
   text-indent: 1rem;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
 }
+hr {
+  max-width: 80vw;
+  height: 0.1rem;
+  background: #1e293b;
+  margin: auto;
+  border-radius: 0.1rem;
+}
+
+/* LISTS */
 ul {
   padding: 1rem;
   list-style: disc inside;
@@ -78,6 +91,8 @@ ul {
 li {
   padding: 0.5rem 1rem;
 }
+
+/* LINKS AND BUTTONS */
 a {
   color: #38bdf8;
   text-decoration: none;
@@ -89,13 +104,7 @@ a:hover {
 }
 a:active {
   color: #997016;
-}
-hr {
-  max-width: 80vw;
-  height: 0.1rem;
-  background: #1e293b;
-  margin: auto;
-  border-radius: 0.1rem;
+  text-decoration: none;
 }
 button, .download {
   background: #38bdf8;
@@ -109,88 +118,166 @@ button, .download {
 button:hover, .download:hover {
   font-weight: 600;
   opacity: 1;
-  text-decoration: none;
+  text-decoration: underline;
 }
 button:active, .download:active {
   background: #0f172a;
   border: 1px solid #38bdf8;
   color: #fff8e7;
+  text-decoration: none;
 }
 button img {
   width: 1rem;
   vertical-align: bottom;
 }
-img, svg {
-  width: 100%;
-  height: auto;
-}
 
-/* Nav */
-nav {
-  max-height: 3.5rem;
-  padding: 0.5rem;
-  background: #020617;
+/* MAIN MENU */
+/* Structure: 
+nav (root element for the main menu) -> 
+menuPanel (a div that contains both menues, EN-ES) -> 
+mainMenu (Contains individual menu languages in an ul element for each) -> 
+submenuCont (li element with the submenu, includes the toggle button and the submenu panel) -> 
+submenuPanel (an ul element that contains the projects links)  */
+nav,
+.menuPanel,
+.mainMenu,
+.submenuCont {
   overflow: visible;
 }
-.sub-menu {
+nav {
+  position: fixed;
+  height: auto;
+  padding: 0.5rem;
+  background: #020617;
+  z-index: 99;
+}
+.menuPanel {
+  padding: 0.5rem;
+  position: absolute;
+  width: 250px;
+  height: auto;
+  background: #1e293b;
+  border-radius: 1rem;
+  display: none;
+}
+.menuPanel.menuOpen {
+  display: block;
+  transition: all 0.5s ease;
+}
+.mainMenu {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mainMenu li {
+  min-width: 200px;
   padding: 0;
   display: flex;
   flex-direction: column;
-  list-style: none;
+  align-items: flex-start;
 }
-.sub-menu li {
-  padding: 0;
+.mainMenu a {
+  width: 100%;
 }
-.sub-menu a {
-  padding: 0.5rem;
-  display: block;
-  border-radius: 0.1rem;
-}
-.menu-panel {
-  width: 250px;
-  height: 100%;
+.submenuCont {
   position: relative;
-  right: 100%;
+}
+.submenuPanel {
+  position: relative;
+  top: 100%;
+  left: 0;
+  padding: 0 0 0 1rem;
+  min-width: 150px;
+  list-style: none;
   background: #1e293b;
+  z-index: 999;
   border-radius: 1rem;
+  display: none;
 }
-.menu-panel.menu-open {
-  right: 0;
-  transition: right 0.3s ease;
+.submenuPanel  {
+  padding: 1rem;
 }
-/* Floating Button */
+.submenuPanel a {
+  width: 100%;
+}
+.submenuPanel.submenuOpen {
+  display: block;
+  transition: all 0.3s ease;
+}
+/* Button and links standarization for menu */
+.mainMenu a, .submenuToggle {
+  height: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.submenuToggle {
+  font: inherit;
+  color: #38bdf8;
+  text-decoration: none;
+  line-height: 0.7;
+  opacity: 1;
+  appearance: none;
+}
+.submenuToggle:hover {
+  text-decoration: underline;
+}
+.submenuToggle:active {
+  font: inherit;
+  font-weight: 600;
+  color: #997016;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+/* Menu responsiveness for DESKTOP */
+@media (min-width: 1000px) {
+  .menuPanel {
+    width: 100vw;
+    margin: 0 auto;
+    background: #020617;
+    border-radius: 0;
+    overflow: visible;
+    display: block;
+    position: relative;
+  }
+  .menuButton {
+    display:none;
+  }
+  .mainMenu {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .mainMenu li {
+    min-width: 250px;
+  }
+  .mainMenu a {
+    width: auto;
+  }
+  .submenuPanel {
+    position: absolute;
+  }
+}
+
+/* LANGUAGE BUTTON, FIXED */
 .lang {
   position: fixed;
   top: 0.5rem;
   right: 1rem;
-  z-index: 99;
-}
-/* Menu Button */
-@media (min-width: 768px) {
-  .menu-button {
-    display:none;
-  }
-  .sub-menu {
-    justify-content: center;
-    flex-direction: row;
-    gap: 2rem;
-  }
-  .menu-panel {
-    width: 100vw;
-    background: #020617;
-    right: 0;
-    transition: right 0.3s ease;
-  }
+  z-index: 999;
 }
 
-/* Header */
+/* HEADER */
 header {
   text-align: center;
   padding: 6rem 3rem;
   background: #020617;
 }
 
-/* Main and Sections */
+/* MAIN CONTAINER AND SECTIONS */
 main {
   width: 95vw;
   margin: 0 auto;
@@ -199,6 +286,7 @@ main {
 section {
   margin: 1rem 0;
 }
+
 /* Landing Page (index) */
 .projects-grid {
   display: grid;
@@ -229,13 +317,9 @@ section {
   gap: 1.5rem;
   grid-template-columns: 1fr;
 }
-/* Responsive Queries */
 
-@media (max-width: 500px) {
-  html {
-    font-size: 14px;
-  }
-}
+
+/* Responsive Queries */
 @media (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -261,7 +345,7 @@ section {
   }
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   padding: 1rem;
   text-align: center;
@@ -272,15 +356,19 @@ footer {
   background: #020617;
 }
 
-/* Utilities */
-.hidden {
-  display: none !important;
-}
-.inline {
-  display: inline-block;
-}
+/* UTILITIES */
+
+/* Use this to keep an item hidden all times */
 .invisible {
   display: none;
+}
+/* Use this to show/hide UI elements when needed */ 
+.hidden {
+  display: none;
+}
+
+.inline {
+  display: inline-block;
 }
 .card {
   background: #1e293b;
