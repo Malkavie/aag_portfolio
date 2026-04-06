@@ -25,121 +25,213 @@
         <li><a href="../cv.html">Resume</a></li>
 
         <li class="submenuCont">
+
           <button class="submenuToggle" aria-expanded="false" aria-controls="projectsSubmenu" onclick="toggleSubmenu(this)">
             Projects <span class="material-icons">arrow_drop_down</span>
           </button>
+
           <ul class="submenuPanel">
             <li><a href="../assembly/index.html">Assembly Line</a></li>
             <li><a href="../dashboard/index.html" aria-current="page">Sales Dashboard</a></li>
           </ul>
+
         </li>
       </ul>
+    </div>
 
   </nav>
 
-  <header id="mainheader" class="header" aria-labelledby="hero-title">
-    <h1 id="hero-title">Sales Dashboard</h1>
+  <!-- HEADER -->
+  <header id="mainheader" class="mainHeader" role="banner" aria-labelledby="hero-title">
+
+    <div>
+      <h1 id="hero-title">Sales Dashboard</h1>
+      <p class="tagline">Weekly performance overview across all distribution channels</p>
+    </div>
+
     <div class="actions">
-      <button>Date Range</button>
-      <button>Export</button>
+
+      <div>
+
+        <label for="daterange" class="invisible">Select date range:</label>
+        <select id="daterange" aria-label="Change data range" title="Change data range">
+          <option>This Week</option>
+          <option>Last 7 Days</option>
+          <option>Last 30 Days</option>
+        </select>
+      </div>
+
+      <button class="ghost" aria-label="Refresh data" title="Refresh data">
+        <span class="material-icons">refresh</span>
+      </button>
+
+      <button aria-label="Export Report" title="Export report">Export Report</button>
+
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main id="maincontent">
+
     <section class="kpis" aria-labelledby="kpis-title">
+      <h2 id="kpis-title">Quick View</h2>
 
-      <article class="card" aria-labelledby="total-title">
-        <h3 id="total-title">Total Revenue</h3>
-        <p>$48,320</p>
-      </article>
+      <div class="kpisGrid" aria-live="polite">
 
-      <article class="card" aria-labelledby="sales-title">
-        <h3 id="sales-title">Sales</h3>
-        <p>1,240</p>
-      </article>
+        <article class="card" aria-labelledby="total-title">
+          <header class="card-header">
+            <h3 id="total-title">Total Revenue</h3>
+          </header>
 
-      <article class="card" aria-labelledby="conversion-title">
-        <h3 id="conversion-title">Conversion Rate</h3>
-        <p>3.8%</p>
-      </article>
+          <div class="card-info">
+            <small>This week:</small>
+            <p class="card-value">$48,320</p>
+            <small>Last week:</small>
+            <p>$42,280</p>
+          </div>
 
-      <article class="card" aria-labelledby="avgvalue-title">
-        <h3 iv="avgvalue-title">Avg Order Value</h3>
-        <p>$39.00</p>
-      </article>
+          <p class="card-trending positive">
+            <span class="material-icons" aria-hidden="true">trending_up</span>
+            <span class="invisible">Increased by</span>12.5%
+          </p>
+        </article>
 
+        <article class="card" aria-labelledby="sales-title">
+          <header class="card-header">
+            <h3 id="sales-title">Sales</h3>
+          </header>
+
+          <div class="card-info">
+            <small>This week:</small>
+            <p class="card-value">1,248</p>
+            <small>Last week:</small>
+            <p>1,145</p>
+          </div>
+
+          <p class="card-trending positive">
+            <span class="material-icons" aria-hidden="true">trending_up</span>
+            <span class="invisible">Increased by</span>8.2%
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="conversion-title">
+          <header class="card-header">
+            <h3 id="conversion-title">Conversion Rate</h3>
+          </header>
+
+          <div class="card-info">
+            <small>This week:</small>
+            <p class="card-value">3.8%</p>
+            <small>Last week:</small>
+            <p>4.5%</p>
+          </div>
+
+          <p class="card-trending negative">
+            <span class="material-icons" aria-hidden="true">trending_down</span>
+            <span class="invisible">Decreased by</span>0.7%
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="avgvalue-title">
+          <header class="card-header">
+            <h3 id="avgvalue-title">Avg Order Value</h3>
+          </header>
+
+          <div class="card-info">
+            <small>This week:</small>
+            <p class="card-value">$39.00</p>
+            <small>Last week:</small>
+            <p>$40.6</p>
+          </div>
+
+          <p class="card-trending positive">
+            <span class="material-icons" aria-hidden="true">trending_up</span>
+            <span class="invisible">Increased by</span>4.1%
+          </p>
+        </article>
+
+      </div>
     </section>
 
-    <section class="mainchart card" aria-labelledby="salesperf-title">
+    <section class="mainchart card" aria-labelledby="salesperf-title" role="region">
       <h2 id="salesperf-title">Sales Performance</h2>
-      <svg id="lineChart" viewBox="0 0 600 300" role="img" aria-labelledby="line-title line-desc">
+      <svg id="lineChart" viewBox="0 0 600 300" role="img" aria-labelledby="line-title line-desc" aria-describedby="mainchart-summary">
         <title id="line-title">Weekly Sales Performance Chart</title>
         <desc id="line-desc">
-          This line chart shows revenue growth over the last 7 days
+          This line chart shows revenue growth over the last 7 days.
+          Use keyboard navigation to explore individual data points.
         </desc>
       </svg>
-      <p class="sr-only">
+      <small class="chartCaption">Weekly sales performance chart</small>
+      <p id="mainchart-summary" class="sr-only">
         Revenue increased from $1200 on Monday to $3000 on Saturday, with slight variation midweek.
       </p>
     </section>
 
     <section class="secondary">
-      <article class="card" aria-labelledby="topprod-title">
+      <article class="card" role="region" aria-labelledby="topprod-title">
         <h2 id="topprod-title">Top Selling Products</h2>
-        <svg id="barChart" viewBox="0 0 600 300" role="img" aria-labelledby="bar-title bar-desc">
-          <title id="bar-title">Top Seeling Products Chart</title>
+        <svg id="barChart" viewBox="0 0 600 300" role="img" aria-labelledby="bar-title bar-desc" aria-describedby="barchart-summary">
+          <title id="bar-title">Top Selling Products Chart</title>
           <desc id="bar-desc">
-            This bar chart shows the top selling products
+            Bar chart showing the top selling products by units sold.
+            Use keyboard navigation to explore individual bars and view details.
           </desc>
         </svg>
-        <p class="sr-only"></p>
+        <small class="chartCaption">Weekly top selling products</small>
+        <p id="barchart-summary" class="sr-only">
+          Headphones are the best selling product with 320 units sold. 
+          Backpacks have the lowest sales with 100 units.
+        </p>
       </article>
 
-      <article class="card" aria-labelledby="revenuebreak-title">
+      <article class="card" role="region" aria-labelledby="revenuebreak-title">
         <h2 id="revenuebreak-title">Revenue Breakdown</h2>
-        <svg id="pieChart" viewBox="0 0 200 250" role="img" aria-labelledby="donut-title donut-desc">
-          <title id="donut-title">Revenue Breakdown Chart</title>
-          <desc id="donut-desc">
-            This donut chart shows revenue distribution by channel
+        <svg id="pieChart" class="roundChart" viewBox="0 0 200 250" role="img" aria-labelledby="pie-title pie-desc" aria-describedby="piechart-summary">
+          <title id="pie-title">Revenue Breakdown Chart</title>
+          <desc id="pie-desc">
+            This donut chart shows revenue distribution by channel.
+            Use keyboard navigation to explore individual sections.
           </desc>
         </svg>
-        <p class="sr-only"></p>
+        <small class="chartCaption">Weekly revenue by channel</small>
+        <p id="piechart-summary" class="sr-only">
+          Online sales represent 60% of total revenue, retail 25%, and wholesale 15%.
+          Online is the dominant channel.
+        </p>
       </article>
     </section>
 
-    <section class="table card">
-      <h2>Recent Transactions</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Customer</th>
-            <th>Product</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>Wireless Headphones</td>
-            <td>$120</td>
-            <td>Completed</td>
-          </tr>
-          <tr>
-            <td>Jane Smith</td>
-            <td>Smart Watch</td>
-            <td>$89</td>
-            <td>Pending</td>
-          </tr>
-        </tbody>
-      </table>
+    <section class="table card" aria-labelledby="transactions-title">
+      <h2 id="transactions-title">Recent Transactions</h2>
+      <div class="tableWrapper">
+        <table id="salesData">
+          <thead>
+            <tr>
+              <th scope="col">Order</th>
+              <th scope="col">Product</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Total</th>
+              <th scope="col">Channel</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody aria-live="polite">
+            
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- GLOBAL TOOLTIP FOR GRAPHICS -->
     <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
   </main>
 
+  <!-- FOOTER -->
   <footer id="mainfooter">
+    <p>2026 &copy; Adrian Aguado. All rights reserved</p>
+    <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
+    <p><a href="mailto:a.aguado.g@hotmail.com">Contact Me</a></p>
   </footer>
 
   <!---->

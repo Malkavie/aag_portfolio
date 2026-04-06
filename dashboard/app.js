@@ -232,6 +232,7 @@ function lineChart() {
     circle.setAttribute("cy", cy)
     circle.setAttribute("r", "3.5")
     circle.setAttribute("fill", "#3b82f6")
+    circle.style.transition = "all 0.25s ease"
 
     circle.setAttribute("aria-hidden", true)
 
@@ -257,17 +258,20 @@ function lineChart() {
 
     //Mouse events
     circleOut.addEventListener("mousemove", (e) => {
+      circle.setAttribute("r", "5")
       tooltip.style.opacity = 1
       tooltip.style.left = e.pageX + 10 + "px"
       tooltip.style.top = e.pageY - 30 + "px"
       tooltip.textContent = `${labels[index]}: $${value}`
     })
     circleOut.addEventListener("mouseleave", () => {
+      circle.setAttribute("r", "3.5")
       tooltip.style.opacity = 0
     })
 
     //Keyboard events
     circleOut.addEventListener("focus", (e) => {
+      circle.setAttribute("r", "5")
       tooltip.style.opacity = 1
       tooltip.style.visibility = "hidden"
       tooltip.textContent = `${labels[index]}: $${value}`
@@ -275,6 +279,7 @@ function lineChart() {
       tooltip.style.visibility = "visible"
     })
     circleOut.addEventListener("blur", () => {
+      circle.setAttribute("r", "3.5")
       tooltip.style.opacity = 0
     })
 
@@ -1013,10 +1018,10 @@ pieChart()
 /* ***** MENU APP ***** */
 
 // Main menu elements (button and container)
-const menuButton = document.getElementById('menuToggle')
-const menuPanel = document.getElementById('menuPanel')
+const menuButton = document.getElementById("menuToggle")
+const menuPanel = document.getElementById("menuPanel")
 // Obtains the links in each menu
-const menuLinks = menuPanel.querySelectorAll('a')
+const menuLinks = menuPanel.querySelectorAll("a")
 
 // Sets initial state (closed)
 let isMenuOpen = false
@@ -1026,9 +1031,9 @@ let isSubmenuOpen = false
 function setMenuAccessibility(isOpen) {
   menuLinks.forEach(link => {
     if (isOpen) {
-      link.setAttribute('tabindex', '0')
+      link.setAttribute("tabindex", "0")
     } else {
-      link.setAttribute('tabindex', '-1')
+      link.setAttribute("tabindex", "-1")
     }
   })
 }
@@ -1038,12 +1043,12 @@ setMenuAccessibility(false)
 
 // Menu Toggle
 if (menuButton) {
-  menuButton.addEventListener('click', () => {
+  menuButton.addEventListener("click", () => {
     isMenuOpen = !isMenuOpen
     // Toggle class
-    menuPanel.classList.toggle('menuOpen', isMenuOpen)
+    menuPanel.classList.toggle("menuOpen", isMenuOpen)
     // Update ARIA
-    menuButton.setAttribute('aria-expanded', isMenuOpen)
+    menuButton.setAttribute("aria-expanded", isMenuOpen)
     // Update accessibility
     setMenuAccessibility(isMenuOpen)
   })
@@ -1052,17 +1057,92 @@ function toggleSubmenu(el) {
   isSubmenuOpen = !isSubmenuOpen
   // Select element and toggle class
   const panel = el.nextElementSibling
-  panel.classList.toggle('submenuOpen', isSubmenuOpen)
+  panel.classList.toggle("submenuOpen", isSubmenuOpen)
   // Update ARIA
-  el.setAttribute('aria-expanded', isSubmenuOpen)
+  el.setAttribute("aria-expanded", isSubmenuOpen)
 }
 
 // Cerrar con tecla Esc
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && isMenuOpen) {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && isMenuOpen) {
     isMenuOpen = false
-    menuPanel.classList.remove('menuOpen')
-    menuButton.setAttribute('aria-expanded', 'false')
+    menuPanel.classList.remove("menuOpen")
+    menuButton.setAttribute("aria-expanded", "false")
     setMenuAccessibility(false)
   }
 })
+
+/* ***** LOADING DATA EFFECT ***** */
+// Applies to the whole document to simulate data loading when range selector changes
+
+document.getElementById("daterange").addEventListener("change", () => {
+  document.body.classList.add("loading")
+
+  setTimeout(() => {
+    document.body.classList.remove("loading")
+  }, 600)
+})
+
+/* ***** DYNAMIC SALES DATA SIMULATION ***** */
+const inventory = [
+  {
+    "name": "Headphones",
+    "price": 95.45
+  },
+  {
+    "name": "Backpack",
+    "price": 105.50
+  },
+  {
+    "name": "Smartwatch",
+    "price": 134.25
+  },
+  {
+    "name": "Sneakers",
+    "price": 125.70
+  },
+  {
+    "name": "Sunglasses",
+    "price": 110.80
+  }
+]
+const channels = ["Online", "Store", "Wholesale"]
+
+function addTransaction() {
+  const table = document.getElementById("salesData")
+  const tbody = table.querySelector("tbody")
+
+  const row = document.createElement("tr")
+
+  const order = Math.floor(Math.random() * 9000 + 1000)
+  const amount = Math.floor((Math.random() * 5) + 1)
+  const status = Math.random() > 0.2 ? "Completed" : "Pending"
+  const product = Math.floor(Math.random() * inventory.length)
+  const channel = Math.floor(Math.random() * channels.length)
+
+  const name = inventory[product].name
+  const price = inventory[product].price
+  const total = price * amount
+
+  row.innerHTML = `
+    <td>${order}</td>
+    <td>${name}</td>
+    <td>
+      ${amount} x 
+      <small class="price">$${price}</small>
+    </td>
+    <td>$${total}</td>
+    <td>${channels[channel]}</td>
+    <td>
+      <span class="${status}">${status}</span>
+    </td>
+  `
+
+  tbody.prepend(row)
+
+  if (tbody.children.length > 10) {
+    tbody.removeChild(tbody.lastChild)
+  }
+}
+
+setInterval(addTransaction, 2000)
