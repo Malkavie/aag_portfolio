@@ -8,7 +8,7 @@
 }
 .material-icons {
     font-family: 'Material Icons';
-    font-size: 1.2rem;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     display: inline-block;
@@ -49,6 +49,37 @@ img, svg {
   height: auto;
 }
 
+/* Blocking for small screens */
+.viewport-warning {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  .viewport-warning {
+    width: 320px;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #020617;
+    color: #f59e0b;
+    font-size: 0.75rem;
+    justify-content: center;
+    padding: 0.5rem;
+    z-index: 9999;
+  }
+  .viewport-warning p {
+    font-size: 15px;
+    width: 100vw;
+    position: absolute;
+    top: 1rem;
+    left: 0.5rem;
+    text-align: center;
+  }
+}
+
 /* ELEMENT STYLES */
 html {
   width: 100%;
@@ -57,6 +88,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  height: auto;
+  min-width: 320px;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: #fff8e7;
@@ -89,7 +122,6 @@ submenuCont (li element with the submenu, includes the toggle button and the sub
 submenuPanel (an ul element that contains the projects links)  */
 nav,
 .menuPanel,
-.mainMenu,
 .submenuCont {
   overflow: visible;
 }
@@ -105,14 +137,18 @@ nav {
   padding: 0.5rem;
   position: absolute;
   width: 250px;
-  height: auto;
   background: #1e293b;
   border-radius: 1rem;
-  display: none;
+  opacity: 0;
+  scale: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition: opacity 0.3s ease, scale 0.3s ease;
 }
 .menuPanel.menuOpen {
-  display: block;
-  transition: all 0.5s ease;
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
 }
 .mainMenu {
   padding: 0;
@@ -135,6 +171,7 @@ nav {
   position: relative;
 }
 .submenuPanel {
+  height: 0;
   position: relative;
   top: 100%;
   left: 0;
@@ -144,17 +181,20 @@ nav {
   background: #1e293b;
   z-index: 999;
   border-radius: 1rem;
-  display: none;
-}
-.submenuPanel  {
-  padding: 1rem;
+  opacity: 0;
+  scale: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition: opacity 0.3s ease, scale 0.3s ease;
 }
 .submenuPanel a {
   width: 100%;
 }
 .submenuPanel.submenuOpen {
-  display: block;
-  transition: all 0.3s ease;
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
 }
 /* Buttons and links standarization for menu */
 .mainMenu a, .submenuToggle {
@@ -187,7 +227,7 @@ nav {
 }
 /* Menu Button */
 .menuButton {
-  font: inherit;
+  font-size: 1rem;
   font-weight: 400;
   color: #020617;
   background: #38bdf8;
@@ -216,11 +256,16 @@ nav {
   }
   .menuPanel {
     width: 100vw;
+    height: auto;
     margin: 0 auto;
     background: #020617;
     border-radius: 0;
+    overflow: visible;
     display: block;
     position: relative;
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
   }
   .menuButton {
     display:none;
@@ -236,7 +281,9 @@ nav {
     width: auto;
   }
   .submenuPanel {
+    height: 100%;
     position: absolute;
+    visibility: visible;
   }
 }
 
@@ -306,6 +353,20 @@ header.mainHeader .status {
   text-align: left;
   }
 }
+@media (min-width: 1300px) {
+  header.mainHeader {
+    width: 80vw;
+    margin: 4rem auto 0;
+  }
+}
+
+/* MAIN CONTENT */
+@media (min-width: 1300px) {
+  main {
+    width: 80vw;
+    margin: 0 auto;
+  }
+}
 
 /* SECTIONS */
 section {
@@ -350,31 +411,67 @@ section {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-.secondary .roundChart {
+@media (min-width: 1000px) {
+  .secondary {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Charts auxiliaries */
+.chartSVG {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.roundChart {
   width: 80%;
   margin: 0 auto;
   display: block;
 }
 @media (min-width: 500px) {
-  .secondary .roundChart {
+  .roundChart {
     width: 60%;
-    margin: auto;
   }
 }
 @media (min-width: 700px) {
-  .secondary .roundChart {
-    width: 50%;
-    margin: auto;
+  .chartSVG {
+    width: 95%;
+  }
+  .roundChart {
+    width: 45%;
   }
 }
 @media (min-width: 1000px) {
-  .secondary {
-    grid-template-columns: 2fr 1fr;
+  .chartSVG {
+    width: 90%;
   }
-  .secondary .roundChart {
-    width: 100%;
-    margin: 0;
+  .roundChart {
+    width: 80%;
   }
+}
+.tooltip {
+  position: absolute;
+  background: #1e293b;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 99;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.chartCaption {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  color: #94a3b8;
 }
 
  /* Panel: Live Data */
@@ -453,34 +550,6 @@ section {
 .price {
   color: thistle;
   font-size: 0.75rem;
-}
-
-/* ***** CHARTS ***** */
-
-/* Charts tooltip */
-.tooltip {
-  position: absolute;
-  background: #1e293b;
-  font-size: 0.8rem;
-  color: #e2e8f0;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 99;
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.chartCaption {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  color: #94a3b8;
 }
 
 /* FOOTER */

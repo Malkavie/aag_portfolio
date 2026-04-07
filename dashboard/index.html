@@ -20,6 +20,7 @@
     </button>
   
     <div id="menuPanel" class="menuPanel">
+
       <ul class="mainMenu">
         <li><a href="../index.html">Main</a></li>
         <li><a href="../cv.html">Resume</a></li>
@@ -37,6 +38,7 @@
 
         </li>
       </ul>
+
     </div>
 
   </nav>
@@ -155,7 +157,7 @@
 
     <section class="mainchart card" aria-labelledby="salesperf-title" role="region">
       <h2 id="salesperf-title">Sales Performance</h2>
-      <svg id="lineChart" viewBox="0 0 600 300" role="img" aria-labelledby="line-title line-desc" aria-describedby="mainchart-summary">
+      <svg id="lineChart" class="chartSVG" viewBox="0 0 600 300" role="img" aria-labelledby="line-title line-desc" aria-describedby="mainchart-summary">
         <title id="line-title">Weekly Sales Performance Chart</title>
         <desc id="line-desc">
           This line chart shows revenue growth over the last 7 days.
@@ -171,7 +173,7 @@
     <section class="secondary">
       <article class="card" role="region" aria-labelledby="topprod-title">
         <h2 id="topprod-title">Top Selling Products</h2>
-        <svg id="barChart" viewBox="0 0 600 300" role="img" aria-labelledby="bar-title bar-desc" aria-describedby="barchart-summary">
+        <svg id="barChart" class="chartSVG" viewBox="0 0 600 300" role="img" aria-labelledby="bar-title bar-desc" aria-describedby="barchart-summary">
           <title id="bar-title">Top Selling Products Chart</title>
           <desc id="bar-desc">
             Bar chart showing the top selling products by units sold.
@@ -229,11 +231,16 @@
 
   <!-- FOOTER -->
   <footer id="mainfooter">
+
     <p>2026 &copy; Adrian Aguado. All rights reserved</p>
     <p class="tagline">Built for the web using HTML, CSS, and JavaScript</p>
     <p><a href="mailto:a.aguado.g@hotmail.com">Contact Me</a></p>
+
   </footer>
 
+  <div class="viewport-warning" role="status">
+    <p>This dashboard is optimized for screens wider than 320px.</p>
+  </div>
   <!---->
   <script src="app.js"></script>
 </body>

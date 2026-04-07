@@ -140,14 +140,14 @@ submenuCont (li element with the submenu, includes the toggle button and the sub
 submenuPanel (an ul element that contains the projects links)  */
 nav,
 .menuPanel,
-.mainMenu,
 .submenuCont {
   overflow: visible;
 }
 nav {
   position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
   height: auto;
-  padding: 0.5rem;
   background: #020617;
   z-index: 99;
 }
@@ -155,14 +155,18 @@ nav {
   padding: 0.5rem;
   position: absolute;
   width: 250px;
-  height: auto;
   background: #1e293b;
   border-radius: 1rem;
-  display: none;
+  opacity: 0;
+  scale: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition: opacity 0.3s ease, scale 0.3s ease;
 }
 .menuPanel.menuOpen {
-  display: block;
-  transition: all 0.5s ease;
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
 }
 .mainMenu {
   padding: 0;
@@ -185,6 +189,7 @@ nav {
   position: relative;
 }
 .submenuPanel {
+  height: 0;
   position: relative;
   top: 100%;
   left: 0;
@@ -194,17 +199,20 @@ nav {
   background: #1e293b;
   z-index: 999;
   border-radius: 1rem;
-  display: none;
-}
-.submenuPanel  {
-  padding: 1rem;
+  opacity: 0;
+  scale: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition: opacity 0.3s ease, scale 0.3s ease;
 }
 .submenuPanel a {
   width: 100%;
 }
 .submenuPanel.submenuOpen {
-  display: block;
-  transition: all 0.3s ease;
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
 }
 /* Button and links standarization for menu */
 .mainMenu a, .submenuToggle {
@@ -235,14 +243,22 @@ nav {
 }
 /* Menu responsiveness for DESKTOP */
 @media (min-width: 1000px) {
+  nav {
+    top: 0;
+    left: 0;
+  }
   .menuPanel {
     width: 100vw;
+    height: auto;
     margin: 0 auto;
     background: #020617;
     border-radius: 0;
     overflow: visible;
     display: block;
     position: relative;
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
   }
   .menuButton {
     display:none;
@@ -258,7 +274,9 @@ nav {
     width: auto;
   }
   .submenuPanel {
+    height: 100%;
     position: absolute;
+    visibility: visible;
   }
 }
 
